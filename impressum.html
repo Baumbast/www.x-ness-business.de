@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum &mdash; X-ness&reg; Business</title>
+<meta name="description" content="Impressum und Anbieterkennzeichnung von X-ness&reg; Business, Wolfgang Baumbast, Ehingen (Donau).">
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:     #111111;
+  --white:     #FFFFFF;
+  --gold:      #B89A55;
+  --stone:     #D7D2C8;
+  --taupe:     #A49787;
+  --petrol:    #3B6D73;
+  --gray:      #F5F4F2;
+  --serif:     'Non-Elbow-Sans', Georgia, serif;
+  --sans:      'Sen', system-ui, sans-serif;
+  /* Spacing per spec */
+  --sp-xl:     96px;
+  --sp-lg:     64px;
+  --sp-md:     32px;
+  --sp-sm:     16px;
+  /* Layout */
+  --max:       1280px;
+  --read:      720px;
+  --pad:       clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-size: 20px;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone);
+  padding: 0 var(--pad);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; height: 68px;
+}
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; letter-spacing: .01em; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 16px; font-weight: 400; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+/* Buttons per spec: primary=black/white, secondary=white/black border */
+.btn-primary {
+  display: inline-block;
+  background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: opacity .2s; letter-spacing: .01em;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-secondary {
+  display: inline-block;
+  background: var(--white); color: var(--black);
+  font-family: var(--sans); font-size: 16px; font-weight: 400;
+  padding: 13px 32px; border-radius: 10px;
+  text-decoration: none; border: 1.5px solid var(--black); cursor: pointer;
+  transition: background .2s;
+}
+.btn-secondary:hover { background: var(--gray); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+/* FOOTER */
+footer {
+  background: var(--black); padding: var(--sp-lg) var(--pad);
+  color: rgba(255,255,255,.4); font-size: 14px; font-weight: 400;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-md);
+}
+.footer-logo { font-family: var(--serif); font-size: 20px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; list-style: none; }
+.footer-links a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.8); }
+/* TYPOGRAPHY */
+h1 { font-family: var(--serif); font-weight: 400; color: var(--black); line-height: 1.15; }
+h2 { font-family: var(--serif); font-weight: 400; color: var(--black); line-height: 1.2; }
+h3 { font-family: var(--serif); font-weight: 400; color: var(--black); margin-bottom: var(--sp-sm); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 700; color: var(--black); }
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+/* SECTIONS */
+section { padding: var(--sp-xl) var(--pad); }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.read-inner { max-width: var(--read); margin: 0 auto; }
+.page-wrap { max-width: var(--read); margin: 0 auto; padding: 120px var(--pad) var(--sp-xl); }
+
+.prose h2 { font-size: 28px; margin-top: var(--sp-lg); margin-bottom: var(--sp-sm); }
+.prose h3 { font-size: 20px; margin-top: var(--sp-md); margin-bottom: 8px; color: var(--taupe); font-family: var(--sans); font-weight: 700; }
+.prose p, .prose address { font-weight: 400; font-style: normal; line-height: 1.6; margin-bottom: var(--sp-md); color: var(--taupe); }
+.prose a { color: var(--black); text-decoration: underline; text-underline-offset: 3px; }
+hr.div { border: none; border-top: 1.5px solid var(--stone); margin: var(--sp-lg) 0; }
+
+footer .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+footer .footer-logo { font-family: var(--serif); font-size: 22px; color: var(--white); text-decoration: none; }
+footer .footer-links { display: flex; gap: 24px; list-style: none; }
+footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+footer a:hover { color: var(--white); }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die f&uuml;nf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespr&auml;ch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="eyebrow">Rechtliches</div>
+  <h1 style="font-size:clamp(38px,6vw,56px);margin-bottom:var(--sp-lg);">Impressum</h1>
+  <div class="prose">
+    <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+    <address>
+      Wolfgang Baumbast<br>
+      X-ness&reg; Publishing<br>
+      Georg-Zoller-Str. 21<br>
+      89584 Ehingen (Donau)<br>
+      Deutschland
+    </address>
+    <h3>Kontakt</h3>
+    <p>E-Mail: <a href="mailto:info@baumbast.de">info@baumbast.de</a><br>
+    Web: <a href="https://www.x-ness-business.de">www.x-ness-business.de</a></p>
+    <hr class="div">
+    <h2>Markenrecht</h2>
+    <p>X-ness&reg; ist eine eingetragene Marke von Wolfgang Baumbast.<br>
+    DPMA-Registernummer: 30 2024 245 473</p>
+    <hr class="div">
+    <h2>Verantwortlich f&uuml;r den Inhalt nach &sect; 55 Abs. 2 RStV</h2>
+    <address>Wolfgang Baumbast<br>Georg-Zoller-Str. 21<br>89584 Ehingen (Donau)</address>
+    <hr class="div">
+    <h2>Urheberrecht</h2>
+    <p>Die auf dieser Website ver&ouml;ffentlichten Inhalte unterliegen dem deutschen Urheberrecht.
+    Die Buchver&ouml;ffentlichungen, auf die verwiesen wird, erscheinen unter der Lizenz
+    <strong>CC BY 4.0</strong>, sofern nicht anders angegeben.</p>
+    <hr class="div">
+    <h2>Haftungsausschluss</h2>
+    <h3>Haftung f&uuml;r Inhalte</h3>
+    <p>Die Inhalte wurden mit gr&ouml;&szlig;tm&ouml;glicher Sorgfalt erstellt. F&uuml;r Richtigkeit, Vollst&auml;ndigkeit
+    und Aktualit&auml;t kann keine Gew&auml;hr &uuml;bernommen werden. Die auf dieser Website dargestellten
+    Konzepte und Verfahren stellen keine Rechts-, Steuer- oder Unternehmensberatung im Sinne
+    der jeweiligen Berufsgesetze dar.</p>
+    <h3>Haftung f&uuml;r Links</h3>
+    <p>Diese Website enth&auml;lt Links zu externen Websites. F&uuml;r deren Inhalte ist stets der
+    jeweilige Anbieter verantwortlich.</p>
+    <hr class="div">
+    <h2>Streitschlichtung</h2>
+    <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:
+    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.
+    Wir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>
