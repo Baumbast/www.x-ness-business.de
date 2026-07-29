@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X-ness&reg; Business &mdash; Die Aushandlungslast in Organisationen senken</title>
+<meta name="description" content="Alle haben recht und trotzdem geht nichts voran. Warum das an Strukturen liegt, nicht an Menschen &mdash; und wie sich die Aushandlungslast einer Organisation beschreiben und senken l&auml;sst. Vortrag, Workshop, Begleitung.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.x-ness-business.de/">
+<meta property="og:title" content="X-ness&reg; Business &mdash; Die Aushandlungslast in Organisationen senken">
+<meta property="og:description" content="Nicht die Entscheidungen kosten die Kraft. Das Aushandeln davor kostet sie.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:     #111111;
+  --white:     #FFFFFF;
+  --gold:      #B89A55;
+  --stone:     #D7D2C8;
+  --taupe:     #A49787;
+  --petrol:    #3B6D73;
+  --gray:      #F5F4F2;
+  --serif:     'Non-Elbow-Sans', Georgia, serif;
+  --sans:      'Sen', system-ui, sans-serif;
+  /* Spacing per spec */
+  --sp-xl:     96px;
+  --sp-lg:     64px;
+  --sp-md:     32px;
+  --sp-sm:     16px;
+  /* Layout */
+  --max:       1280px;
+  --read:      720px;
+  --pad:       clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  font-size: 20px;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.score-klar { margin-top: var(--sp-xl); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sk-box { border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; background: var(--white); }
+.sk-box.sk-nicht { background: transparent; }
+.sk-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.sk-box ul { list-style: none; margin: 0; padding: 0; }
+.sk-box li { font-size: 16px; color: var(--taupe); line-height: 1.55; padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--stone); }
+.sk-box li:last-child { border-bottom: none; }
+.sk-box li::before { content: ''; position: absolute; left: 0; top: 20px; width: 8px; height: 1.5px; background: var(--gold); }
+.sk-fazit { grid-column: 1 / -1; border: 1.5px solid var(--stone); border-top: 2px solid var(--gold); border-radius: 14px; padding: 36px 32px; background: var(--white); }
+.sk-fazit h3 { font-family: var(--serif); font-size: 28px; margin-bottom: var(--sp-sm); }
+.sk-fazit p { font-size: 18px; line-height: 1.7; color: var(--taupe); max-width: 68ch; }
+.sk-fazit p + p { margin-top: var(--sp-sm); }
+.sk-fazit strong { color: var(--black); font-weight: 400; }
+@media (max-width: 800px) { .score-klar { grid-template-columns: 1fr; } }
+
+.imp-box { max-width: 640px; margin: 0 auto; text-align: center; }
+.imp-form { display: flex; gap: 12px; max-width: 440px; margin: var(--sp-md) auto 0; }
+.imp-form input { width: 100%; padding: 13px 16px; border: 1.5px solid var(--stone); border-radius: 14px; font-family: var(--sans); font-size: 16px; color: var(--black); outline: none; background: var(--white); transition: border-color .2s; }
+.imp-form input:focus { border-color: var(--black); }
+.imp-note { font-size: 13px; color: var(--taupe); margin-top: var(--sp-sm); }
+.imp-note a { color: var(--taupe); }
+.kt-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--sp-xl); margin-top: var(--sp-lg); }
+.kt-row { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1.5px solid var(--stone); font-size: 16px; }
+.kt-row span { color: var(--taupe); }
+.kt-row a { color: var(--black); text-decoration: none; }
+.kt-form { display: flex; flex-direction: column; gap: 16px; }
+.kt-form input, .kt-form textarea { width: 100%; padding: 13px 16px; border: 1.5px solid var(--stone); border-radius: 14px; font-family: var(--sans); font-size: 16px; color: var(--black); outline: none; background: var(--white); transition: border-color .2s; }
+.kt-form input:focus, .kt-form textarea:focus { border-color: var(--black); }
+.kt-form textarea { min-height: 150px; resize: vertical; }
+@media (max-width: 860px) { .kt-grid { grid-template-columns: 1fr; } }
+
+/* DREI HÄUSER */
+.haeuser-band { background: var(--gray); border-top: 1.5px solid var(--stone); }
+.haeuser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-md); }
+.hd-haus {
+  display: block; background: var(--white); border: 1.5px solid var(--stone);
+  border-radius: 14px; padding: 32px 28px; text-decoration: none; color: var(--black);
+  transition: box-shadow .2s;
+}
+a.hd-haus:hover { box-shadow: 0 8px 24px rgba(17,17,17,.12); }
+.hd-hier { background: transparent; }
+.hd-rolle { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hd-name { display: block; font-family: var(--serif); font-size: 20px; margin-bottom: 10px; }
+.hd-text { font-size: 15px; color: var(--taupe); line-height: 1.6; }
+.hd-marke { display: inline-block; margin-top: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--taupe); border-top: 1.5px solid var(--stone); padding-top: 8px; }
+@media (max-width: 760px) { .haeuser-grid { grid-template-columns: 1fr; } }
+
+/* BRÜCKE */
+.bruecke {
+  margin-top: var(--sp-lg);
+  padding-top: var(--sp-md);
+  border-top: 1.5px solid var(--stone);
+  max-width: var(--read);
+}
+.bruecke p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--taupe);
+  margin-bottom: var(--sp-sm);
+}
+.bruecke a {
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--stone);
+  padding-bottom: 4px;
+  transition: border-color .2s;
+}
+.bruecke a:hover { border-bottom-color: var(--black); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone);
+  padding: 0 var(--pad);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; height: 68px;
+}
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; letter-spacing: .01em; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 16px; font-weight: 400; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+/* Buttons per spec: primary=black/white, secondary=white/black border */
+.btn-primary {
+  display: inline-block;
+  background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: opacity .2s; letter-spacing: .01em;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-secondary {
+  display: inline-block;
+  background: var(--white); color: var(--black);
+  font-family: var(--sans); font-size: 16px; font-weight: 400;
+  padding: 13px 32px; border-radius: 10px;
+  text-decoration: none; border: 1.5px solid var(--black); cursor: pointer;
+  transition: background .2s;
+}
+.btn-secondary:hover { background: var(--gray); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+/* FOOTER */
+footer {
+  background: var(--black); padding: var(--sp-lg) var(--pad);
+  color: rgba(255,255,255,.4); font-size: 14px; font-weight: 400;
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--sp-md);
+}
+.footer-logo { font-family: var(--serif); font-size: 20px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; list-style: none; }
+.footer-links a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.8); }
+/* TYPOGRAPHY */
+h1 { font-family: var(--serif); font-weight: 400; color: var(--black); line-height: 1.15; }
+h2 { font-family: var(--serif); font-weight: 400; color: var(--black); line-height: 1.2; }
+h3 { font-family: var(--serif); font-weight: 400; color: var(--black); margin-bottom: var(--sp-sm); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 700; color: var(--black); }
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+/* SECTIONS */
+section { padding: var(--sp-xl) var(--pad); }
+.section-inner { max-width: var(--max); margin: 0 auto; }
+.read-inner { max-width: var(--read); margin: 0 auto; }
+.page-wrap { max-width: var(--read); margin: 0 auto; padding: 120px var(--pad) var(--sp-xl); }
+
+
+/* ── HERO ── */
+.hero {
+  padding: 160px var(--pad) var(--sp-xl);
+  background: var(--white);
+  border-bottom: 1.5px solid var(--stone);
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.hero h1 {
+  font-size: clamp(48px, 6vw, 72px);
+  color: var(--black); margin-bottom: var(--sp-md);
+}
+.hero h1 em { font-style: italic; color: var(--taupe); }
+.hero-sub {
+  font-size: 20px; color: var(--taupe); max-width: 44ch;
+  line-height: 1.6; margin-bottom: var(--sp-lg);
+}
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Score card */
+.score-card {
+  border: 1.5px solid var(--stone); border-radius: 14px;
+  padding: 40px; background: var(--white);
+  box-shadow: 0 6px 24px rgba(17,17,17,.08);
+}
+.score-card-title {
+  font-family: var(--serif); font-size: 18px; color: var(--black);
+  margin-bottom: var(--sp-md);
+}
+.dim-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.dim-label { font-size: 14px; color: var(--taupe); width: 120px; flex-shrink: 0; }
+.dim-bar-bg { flex: 1; height: 4px; background: var(--stone); border-radius: 20px; overflow: hidden; }
+.dim-bar-fill { height: 100%; background: var(--black); border-radius: 20px; }
+.dim-val { font-size: 13px; color: var(--taupe); width: 28px; text-align: right; }
+.score-total {
+  margin-top: var(--sp-md); padding-top: var(--sp-md);
+  border-top: 1.5px solid var(--stone);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.score-total-label { font-size: 13px; color: var(--taupe); }
+.score-total-val { font-family: var(--serif); font-size: 40px; color: var(--black); }
+.score-total-val span { font-size: 16px; color: var(--taupe); font-family: var(--sans); }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .score-card { display: none; }
+}
+
+/* ── WARUM ── */
+.warum { background: var(--white); }
+.warum-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+  margin-top: var(--sp-lg); border: 1.5px solid var(--stone); border-radius: 14px;
+  overflow: hidden;
+}
+.warum-item {
+  padding: 40px 32px;
+  border-right: 1.5px solid var(--stone);
+}
+.warum-item:last-child { border-right: none; }
+.warum-num { font-family: var(--serif); font-size: 56px; color: var(--stone); line-height: 1; margin-bottom: var(--sp-md); }
+.warum-title { font-family: var(--serif); font-size: 24px; color: var(--black); margin-bottom: var(--sp-sm); }
+.warum-text { font-size: 16px; color: var(--taupe); line-height: 1.6; margin: 0; }
+@media (max-width: 800px) {
+  .warum-grid { grid-template-columns: 1fr; }
+  .warum-item { border-right: none; border-bottom: 1.5px solid var(--stone); }
+  .warum-item:last-child { border-bottom: none; }
+}
+
+/* ── SCORE ── */
+.score-section { background: var(--gray); }
+.score-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-xl);
+  align-items: start; margin-top: var(--sp-lg);
+}
+.score-box {
+  border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px;
+  background: var(--white);
+}
+.score-box-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--taupe); margin-bottom: 10px; }
+.score-box-title { font-family: var(--serif); font-size: 26px; color: var(--black); margin-bottom: 14px; }
+.score-box-text { font-size: 16px; color: var(--taupe); line-height: 1.6; margin: 0; }
+.score-effects { margin-top: var(--sp-lg); display: flex; flex-direction: column; gap: var(--sp-md); }
+.score-effect { display: flex; gap: 16px; align-items: flex-start; }
+.score-effect-line { width: 1.5px; background: var(--stone); flex-shrink: 0; height: 24px; margin-top: 4px; }
+.score-effect-text { font-size: 18px; color: var(--black); line-height: 1.5; margin: 0; }
+.score-effect-text span { color: var(--taupe); font-size: 15px; display: block; margin-top: 4px; }
+@media (max-width: 800px) { .score-grid { grid-template-columns: 1fr; } }
+
+/* ── DIMENSIONEN ── */
+.dims-section { background: var(--white); }
+.dims-grid {
+  display: grid; grid-template-columns: repeat(5,1fr); gap: 0;
+  margin-top: var(--sp-lg); border: 1.5px solid var(--stone);
+  border-radius: 14px; overflow: hidden;
+}
+.dim-card {
+  padding: 32px 24px; border-right: 1.5px solid var(--stone);
+  transition: background .2s;
+}
+.dim-card:last-child { border-right: none; }
+.dim-card:hover { background: var(--gray); }
+.dim-icon { font-size: 20px; margin-bottom: var(--sp-md); }
+.dim-name { font-family: var(--serif); font-size: 20px; color: var(--black); margin-bottom: 8px; }
+.dim-desc { font-size: 14px; color: var(--taupe); line-height: 1.6; margin: 0; }
+@media (max-width: 900px) {
+  .dims-grid { grid-template-columns: 1fr 1fr; }
+  .dim-card { border-right: none; border-bottom: 1.5px solid var(--stone); }
+  .dim-card:last-child { border-bottom: none; }
+}
+
+/* ── INSTITUTIONEN ── */
+.inst-section { background: var(--gray); }
+.inst-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-xl);
+  align-items: center; margin-top: var(--sp-lg);
+}
+.inst-dims { display: flex; flex-direction: column; gap: 12px; }
+.inst-dim {
+  padding: 20px 24px; border: 1.5px solid var(--stone); border-radius: 14px;
+  background: var(--white); display: flex; justify-content: space-between; align-items: center;
+}
+.inst-dim-name { font-family: var(--serif); font-size: 18px; color: var(--black); }
+.inst-dim-sub { font-size: 13px; color: var(--taupe); }
+@media (max-width: 800px) { .inst-grid { grid-template-columns: 1fr; } }
+
+/* ── ÜBER WOLFGANG ── */
+.ueber-section { background: var(--white); }
+.ueber-grid {
+  display: grid; grid-template-columns: 360px 1fr; gap: var(--sp-xl);
+  align-items: start; margin-top: var(--sp-lg);
+}
+.ueber-portrait {
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 6px 24px rgba(17,17,17,.12);
+  aspect-ratio: 3/4;
+  background: var(--gray);
+}
+.ueber-portrait img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ueber-links { margin-top: var(--sp-md); display: flex; flex-direction: column; gap: 8px; }
+.ueber-links a { font-size: 16px; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--stone); padding-bottom: 8px; }
+.ueber-links a:hover { border-color: var(--black); }
+@media (max-width: 800px) {
+  .ueber-grid { grid-template-columns: 1fr; }
+  .ueber-portrait { max-width: 280px; }
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--white); border-top: 1.5px solid var(--stone);
+}
+.cta-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.cta-inner h2 { font-size: 42px; margin-bottom: var(--sp-md); }
+.cta-inner p { margin-bottom: var(--sp-lg); }
+
+/* ── x-ness-business.de ── */
+.b-hero { padding: calc(68px + var(--sp-xl)) var(--pad) var(--sp-xl); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.b-hero-inner { max-width: var(--max); margin: 0 auto; }
+.b-hero h1 { font-size: clamp(38px, 5.6vw, 68px); max-width: 17ch; }
+.b-hero h1 em { font-style: normal; color: var(--petrol); }
+.b-lead { font-size: clamp(19px, 2vw, 23px); color: var(--taupe); max-width: 60ch; margin-top: var(--sp-md); line-height: 1.6; }
+.b-cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: var(--sp-lg); }
+.btn-line { display: inline-block; font-family: var(--sans); font-size: 16px; font-weight: 700; color: var(--black); text-decoration: none; padding: 14px 32px; border: 1.5px solid var(--stone); border-radius: 10px; background: transparent; transition: border-color .2s; }
+.btn-line:hover { border-color: var(--black); }
+
+/* Szene */
+.b-szene { max-width: var(--read); }
+.b-szene p { font-size: 20px; line-height: 1.75; color: var(--black); margin-bottom: var(--sp-md); }
+.b-szene p.b-quiet { color: var(--taupe); }
+.b-szene .b-punkt { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); line-height: 1.35; border-left: 2px solid var(--petrol); padding-left: 24px; margin: var(--sp-lg) 0; }
+
+/* Last-Rechnung */
+.b-last { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-lg); }
+.b-last-box { border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; }
+.b-last-box h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 12px; }
+.b-last-box p { font-size: 16px; color: var(--taupe); line-height: 1.6; }
+.b-last-fazit { grid-column: 1 / -1; border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 36px 32px; background: var(--gray); }
+.b-last-fazit p { font-size: 19px; line-height: 1.7; color: var(--taupe); max-width: 70ch; }
+.b-last-fazit strong { color: var(--black); font-weight: 400; }
+
+/* Fünf Profile */
+.b-dim { border-top: 1.5px solid var(--stone); }
+.b-dim-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 32px; padding: 32px 0; border-bottom: 1.5px solid var(--stone); align-items: start; }
+.b-dim-name { font-family: var(--serif); font-size: 24px; }
+.b-dim-num { font-size: 12px; letter-spacing: .12em; color: var(--gold); display: block; margin-bottom: 8px; }
+.b-dim-was { font-size: 17px; line-height: 1.65; }
+.b-dim-frage { font-size: 17px; line-height: 1.65; color: var(--taupe); font-style: italic; }
+
+/* Formate */
+.b-formate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-lg); }
+.b-format { border: 1.5px solid var(--stone); border-radius: 14px; padding: 36px 32px; display: flex; flex-direction: column; }
+.b-format .b-f-tag { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.b-format h3 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-bottom: var(--sp-sm); }
+.b-format p { font-size: 16px; color: var(--taupe); line-height: 1.65; margin-bottom: var(--sp-md); flex: 1; }
+.b-format ul { list-style: none; }
+.b-format li { font-size: 15px; color: var(--taupe); padding: 9px 0 9px 18px; position: relative; border-top: 1px solid var(--stone); }
+.b-format li::before { content: ''; position: absolute; left: 0; top: 18px; width: 8px; height: 1.5px; background: var(--gold); }
+
+/* Wer */
+.b-wer { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--sp-xl); align-items: start; }
+.b-wer img { width: 100%; height: auto; border-radius: 14px; border: 1.5px solid var(--stone); display: block; }
+.b-wer p { font-size: 18px; line-height: 1.75; color: var(--taupe); margin-bottom: var(--sp-md); }
+.b-wer p strong { color: var(--black); font-weight: 400; }
+
+/* Kontakt */
+.b-kt-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--sp-xl); margin-top: var(--sp-lg); }
+.b-kt-row { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1.5px solid var(--stone); font-size: 16px; }
+.b-kt-row span { color: var(--taupe); }
+.b-kt-row a, .b-kt-row .b-val { color: var(--black); text-decoration: none; }
+.b-kt-form { display: flex; flex-direction: column; gap: 16px; }
+.b-kt-form input, .b-kt-form textarea, .b-kt-form select { width: 100%; padding: 13px 16px; border: 1.5px solid var(--stone); border-radius: 14px; font-family: var(--sans); font-size: 16px; color: var(--black); background: var(--white); outline: none; transition: border-color .2s; }
+.b-kt-form input:focus, .b-kt-form textarea:focus, .b-kt-form select:focus { border-color: var(--black); }
+.b-kt-form textarea { min-height: 140px; resize: vertical; }
+
+/* Drei Häuser */
+.haeuser-band { background: var(--gray); border-top: 1.5px solid var(--stone); }
+.haeuser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-md); }
+.hd-haus { display: block; background: var(--white); border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; text-decoration: none; color: var(--black); transition: box-shadow .2s; }
+a.hd-haus:hover { box-shadow: 0 8px 24px rgba(17,17,17,.12); }
+.hd-hier { background: transparent; }
+.hd-rolle { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hd-name { display: block; font-family: var(--serif); font-size: 20px; margin-bottom: 10px; }
+.hd-text { font-size: 15px; color: var(--taupe); line-height: 1.6; }
+.hd-marke { display: inline-block; margin-top: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--taupe); border-top: 1.5px solid var(--stone); padding-top: 8px; }
+
+footer .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+footer .footer-logo { font-family: var(--serif); font-size: 22px; color: var(--white); text-decoration: none; }
+footer .footer-links { display: flex; gap: 24px; list-style: none; }
+footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+footer a:hover { color: var(--white); }
+
+@media (max-width: 960px) {
+  .b-last, .b-formate, .haeuser-grid { grid-template-columns: 1fr; }
+  .b-dim-row { grid-template-columns: 1fr; gap: 12px; }
+  .b-wer, .b-kt-grid { grid-template-columns: 1fr; gap: var(--sp-lg); }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="#last">Die Aushandlungslast</a></li>
+      <li><a href="#profile">Die f&uuml;nf Profile</a></li>
+      <li><a href="#formate">Formate</a></li>
+      <li><a href="#wer">Wer spricht</a></li>
+      <li><a href="#gespraech" class="nav-cta">Gespr&auml;ch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="b-hero">
+  <div class="b-hero-inner">
+    <div class="eyebrow">X-ness&reg; f&uuml;r Organisationen</div>
+    <h1>Alle haben recht.<br>Und trotzdem geht <em>nichts voran.</em></h1>
+    <p class="b-lead">
+      Das liegt selten an den Menschen und fast nie am guten Willen. Es liegt daran,
+      wie viel in einer Organisation jedes Mal neu ausgehandelt werden muss, weil es
+      nirgends vorentschieden ist. Diese Last hat einen Namen, sie l&auml;sst sich
+      beschreiben &mdash; und sie l&auml;sst sich senken.
+    </p>
+    <div class="b-cta-row">
+      <a href="#gespraech" class="btn-primary">Gespr&auml;ch vereinbaren</a>
+      <a href="#last" class="btn-line">Zuerst die Diagnose</a>
+    </div>
+  </div>
+</header>
+
+<section id="szene">
+  <div class="section-inner">
+    <div class="b-szene">
+      <div class="eyebrow">Eine bekannte Szene</div>
+      <h2 style="font-size:clamp(30px,4vw,44px);max-width:20ch;">Die Sitzung, die es schon dreimal gab</h2>
+      <p style="margin-top:var(--sp-md);">
+        Ein Vorhaben liegt auf dem Tisch. Alle Beteiligten sind kompetent, alle meinen
+        es ernst, und jeder Einwand ist f&uuml;r sich genommen berechtigt. Die eine Abteilung
+        verweist auf Zust&auml;ndigkeiten, die andere auf Fristen, die dritte auf Erfahrungen
+        aus einem &auml;hnlichen Fall vor vier Jahren. Nach neunzig Minuten ist man
+        auseinandergegangen, ohne dass jemand einen Fehler gemacht h&auml;tte.
+      </p>
+      <p>
+        Beim n&auml;chsten Mal beginnt dasselbe Gespr&auml;ch von vorn. Nicht weil man es vergessen
+        h&auml;tte, sondern weil nichts von dem, was damals geklungen hat, irgendwo hinterlegt
+        wurde &mdash; keine Priorit&auml;t, kein Vorrang, kein gemeinsames Ma&szlig;. Also wird wieder
+        verhandelt, was schon verhandelt war.
+      </p>
+      <p class="b-punkt">
+        Nicht die Entscheidungen kosten die Kraft.<br>Das Aushandeln davor kostet sie.
+      </p>
+      <p class="b-quiet">
+        Wer das erlebt, sucht meist nach Schuldigen: an der F&uuml;hrung, an der Kultur, an
+        einzelnen Personen. Das ist verst&auml;ndlich und f&uuml;hrt regelm&auml;&szlig;ig in die Irre.
+        Denn was hier wirkt, ist keine Haltung, sondern eine Struktur.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="last" style="background:var(--gray);">
+  <div class="section-inner">
+    <div class="eyebrow">Der Begriff</div>
+    <h2 style="font-size:clamp(32px,4.4vw,50px);max-width:18ch;">Die Aushandlungslast</h2>
+    <p style="font-size:19px;max-width:64ch;margin-top:var(--sp-md);color:var(--taupe);line-height:1.7;">
+      Jede Organisation muss Fragen beantworten: Wer hat Vorrang, was gilt als
+      dringend, welcher Ton ist zul&auml;ssig, worauf kann man sich verlassen. Sie kann
+      diese Fragen vorher beantworten &mdash; oder sie jedes Mal neu verhandeln lassen.
+      Die Summe dessen, was in einer Organisation immer wieder neu verhandelt werden
+      muss, ist ihre Aushandlungslast.
+    </p>
+
+    <div class="b-last">
+      <div class="b-last-box">
+        <h3>Sie ist unsichtbar</h3>
+        <p>
+          Sie steht in keiner Bilanz und in keinem Bericht. Man sieht nur ihre Folgen:
+          lange Sitzungen, wiederkehrende Grundsatzdebatten, Vorhaben, die
+          versanden, ohne dass jemand sie gestoppt h&auml;tte.
+        </p>
+      </div>
+      <div class="b-last-box">
+        <h3>Sie ist teuer</h3>
+        <p>
+          Sie wird in Arbeitszeit bezahlt, und zwar in der teuersten: in der von
+          Menschen, die eigentlich entscheiden, planen und gestalten sollten. Wer sie
+          senkt, gewinnt keine Stimmung, sondern Kapazit&auml;t.
+        </p>
+      </div>
+      <div class="b-last-box">
+        <h3>Sie w&auml;chst von allein</h3>
+        <p>
+          Komplexit&auml;t, Tempo und Regelungsdichte nehmen ohnehin zu. Wer nichts tut,
+          bekommt nicht denselben Zustand wie im Vorjahr, sondern einen schlechteren.
+        </p>
+      </div>
+      <div class="b-last-fazit">
+        <p>
+          <strong>Daraus ergibt sich ein Ma&szlig;stab, der schl&auml;frige Debatten beendet.</strong>
+          Nicht: Ist diese Regel gut gemeint? Sondern: Nimmt sie den Beteiligten
+          Aushandlung ab &mdash; oder b&uuml;rdet sie ihnen welche auf? Gute Strukturen entscheiden
+          im Voraus, was sonst in jedem Einzelfall neu zu kl&auml;ren w&auml;re, und geben die
+          eingesparte Energie an die Menschen zur&uuml;ck. Schlechte tun das Gegenteil, oft
+          mit den besten Absichten.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="section-inner">
+    <div class="eyebrow">Das Werkzeug</div>
+    <h2 style="font-size:clamp(32px,4.4vw,50px);max-width:20ch;">F&uuml;nf Profile, an denen sich eine Organisation pr&uuml;fen l&auml;sst</h2>
+    <p style="font-size:18px;max-width:62ch;margin:var(--sp-md) 0 var(--sp-lg);color:var(--taupe);line-height:1.7;">
+      X-ness betrachtet Organisationen in denselben f&uuml;nf Dimensionen wie Menschen &mdash;
+      nicht als Metapher, sondern weil dieselben Fragen tragen. Keine ist wichtiger
+      als die andere. Was z&auml;hlt, ist die Balance: Ein Spitzenwert neben einem Einbruch
+      ist weniger wert als ein ausgeglichenes Profil auf bescheidenem Niveau.
+    </p>
+
+    <div class="b-dim">
+      <div class="b-dim-row">
+        <div class="b-dim-name"><span class="b-dim-num">01</span>Fitness</div>
+        <div class="b-dim-was">Tr&auml;gt das Modell, mit dem die Organisation arbeitet? Passt der Auftrag noch zu dem, was sie tats&auml;chlich leistet?</div>
+        <div class="b-dim-frage">Wof&uuml;r gibt es uns &mdash; und w&uuml;rde uns jemand vermissen?</div>
+      </div>
+      <div class="b-dim-row">
+        <div class="b-dim-name"><span class="b-dim-num">02</span>Business</div>
+        <div class="b-dim-was">Die finanzielle Lage: Spielr&auml;ume, Abh&auml;ngigkeiten, Verpflichtungen, die weit in die Zukunft reichen.</div>
+        <div class="b-dim-frage">Wie viel Handlungsfreiheit haben wir in drei Jahren noch?</div>
+      </div>
+      <div class="b-dim-row">
+        <div class="b-dim-name"><span class="b-dim-num">03</span>Cleverness</div>
+        <div class="b-dim-was">Wissen, Erfahrung und die F&auml;higkeit, aus beidem etwas Neues zu machen &mdash; statt es nur zu verwalten.</div>
+        <div class="b-dim-frage">Lernen wir schneller, als sich unser Umfeld ver&auml;ndert?</div>
+      </div>
+      <div class="b-dim-row">
+        <div class="b-dim-name"><span class="b-dim-num">04</span>Jointliness</div>
+        <div class="b-dim-was">Das Verh&auml;ltnis zu allen, die mit der Organisation zu tun haben: intern zwischen den Bereichen, extern zu B&uuml;rgern, Kunden, Partnern.</div>
+        <div class="b-dim-frage">Wo verhandeln wir st&auml;ndig neu, was l&auml;ngst gekl&auml;rt sein k&ouml;nnte?</div>
+      </div>
+      <div class="b-dim-row">
+        <div class="b-dim-name"><span class="b-dim-num">05</span>Meaningfulness</div>
+        <div class="b-dim-was">Der Wert, den die Organisation nach au&szlig;en stiftet &mdash; und ob die Menschen darin ihn erkennen k&ouml;nnen.</div>
+        <div class="b-dim-frage">Wei&szlig; die Belegschaft, wozu ihre Arbeit gut ist?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formate" style="background:var(--gray);">
+  <div class="section-inner">
+    <div class="eyebrow">Zusammenarbeit</div>
+    <h2 style="font-size:clamp(32px,4.4vw,50px);max-width:18ch;">Drei Wege, je nachdem wo Sie stehen</h2>
+    <p style="font-size:18px;max-width:60ch;margin-top:var(--sp-md);color:var(--taupe);line-height:1.7;">
+      Alle drei beginnen mit demselben Gespr&auml;ch. Was danach sinnvoll ist, ergibt sich
+      daraus &mdash; nicht aus einer Paketliste.
+    </p>
+
+    <div class="b-formate">
+      <div class="b-format">
+        <div class="b-f-tag">Der Einstieg</div>
+        <h3>Vortrag</h3>
+        <p>
+          Ein Impuls von 45 bis 60 Minuten vor F&uuml;hrungskr&auml;ften, Gremien oder der
+          gesamten Belegschaft. Danach wissen alle im Raum, wovon die Rede ist, wenn
+          jemand von Aushandlungslast spricht.
+        </p>
+        <ul>
+          <li>Klausurtagungen, Fachtage, Gremiensitzungen</li>
+          <li>Auf Ihre Situation zugeschnitten</li>
+          <li>Keine Vorbereitung Ihrerseits n&ouml;tig</li>
+        </ul>
+      </div>
+
+      <div class="b-format">
+        <div class="b-f-tag">Das Kernformat</div>
+        <h3>Workshop</h3>
+        <p>
+          Ein Tag mit dem Leitungsteam, in dem die f&uuml;nf Profile f&uuml;r Ihre Organisation
+          durchgearbeitet werden. Am Ende steht kein Gutachten, sondern ein gemeinsames
+          Bild &mdash; und die Stellen, an denen die Last am gr&ouml;&szlig;ten ist.
+        </p>
+        <ul>
+          <li>Institutionelle Selbstinventur in f&uuml;nf Dimensionen</li>
+          <li>Sechs bis zw&ouml;lf Teilnehmende</li>
+          <li>Schriftliche Zusammenfassung im Anschluss</li>
+        </ul>
+      </div>
+
+      <div class="b-format">
+        <div class="b-f-tag">Die Fortsetzung</div>
+        <h3>Begleitung</h3>
+        <p>
+          Wer weiterarbeiten will, tut das &uuml;ber mehrere Monate in gr&ouml;&szlig;eren Abst&auml;nden.
+          Nicht als Dauerberatung, sondern als regelm&auml;&szlig;iges Nachjustieren, bis die
+          Ver&auml;nderungen ohne mich tragen.
+        </p>
+        <ul>
+          <li>Drei bis sechs Termine &uuml;ber sechs bis zw&ouml;lf Monate</li>
+          <li>Zwischen den Terminen ansprechbar</li>
+          <li>Ziel ist die eigene Tragf&auml;higkeit, nicht die Bindung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wer">
+  <div class="section-inner">
+    <div class="eyebrow">Wer spricht</div>
+    <div class="b-wer" style="margin-top:var(--sp-md);">
+      <img src="wolfgang_portrait_leica_look.png" alt="Wolfgang Baumbast">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);margin-bottom:var(--sp-md);">Wolfgang Baumbast</h2>
+        <p>
+          <strong>Achtundvierzig Jahre &ouml;ffentlicher Dienst.</strong> Finanzverwaltung,
+          sp&auml;ter Regierungspr&auml;sidien und Gesundheits&auml;mter &mdash; zuletzt Corona-Entsch&auml;digungen
+          und die Anerkennung ausl&auml;ndischer Pflegequalifikationen. Ich kenne Silodenken,
+          Zust&auml;ndigkeitsfragen und die Erm&uuml;dung, die entsteht, wenn jeder Vorgang neu
+          verhandelt werden muss, nicht aus der Literatur.
+        </p>
+        <p>
+          <strong>Kommunalpolitik aus der zweiten Reihe.</strong> Als Gemeinderat sitze ich
+          auf der anderen Seite desselben Tisches &mdash; dort, wo Vorhaben scheitern, obwohl
+          niemand dagegen ist.
+        </p>
+        <p>
+          <strong>Und ein Rahmen, der daraus entstanden ist.</strong> Sieben B&auml;nde &uuml;ber die
+          Frage, warum Strukturen Menschen entlasten oder aufreiben. Der Begriff der
+          Aushandlungslast stammt daraus. Ich bringe kein Beratungsprodukt mit, sondern
+          eine Denkweise, die sich an Ihrer Wirklichkeit bew&auml;hren muss.
+        </p>
+        <p style="font-size:16px;">
+          Die theoretische Grundlage steht offen zur Verf&uuml;gung:
+          <a href="https://www.baumbast.de" target="_blank" rel="noopener" style="color:var(--black);">baumbast.de</a> &middot;
+          <a href="https://www.non-elbows.org" target="_blank" rel="noopener" style="color:var(--black);">non-elbows.org</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gespraech" style="background:var(--gray);">
+  <div class="section-inner">
+    <div class="eyebrow">Der n&auml;chste Schritt</div>
+    <h2 style="font-size:clamp(32px,4.4vw,50px);max-width:18ch;">Ein Gespr&auml;ch, kein Angebot</h2>
+    <p style="font-size:18px;max-width:62ch;margin-top:var(--sp-md);color:var(--taupe);line-height:1.7;">
+      Bevor irgendetwas kalkuliert wird, sollten wir eine halbe Stunde miteinander
+      sprechen. Danach wissen wir beide, ob es passt &mdash; und wenn nicht, sage ich es
+      Ihnen. Ein Angebot bekommen Sie erst, wenn klar ist, wof&uuml;r.
+    </p>
+
+    <div class="b-kt-grid">
+      <div>
+        <div class="b-kt-row"><span>E-Mail</span><a href="mailto:info@baumbast.de">info@baumbast.de</a></div>
+        <div class="b-kt-row"><span>Sitz</span><span class="b-val">Ehingen (Donau)</span></div>
+        <div class="b-kt-row"><span>Wirkungsraum</span><span class="b-val">D-A-CH, vor Ort und digital</span></div>
+        <div class="b-kt-row"><span>Antwort</span><span class="b-val">in der Regel binnen 48 Stunden</span></div>
+        <div class="b-kt-row"><span>Privatpersonen</span><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></div>
+      </div>
+
+      <form class="b-kt-form" action="https://formspree.io/f/xanbqkgw" method="POST">
+        <input type="text" name="name" placeholder="Ihr Name" required>
+        <input type="text" name="organisation" placeholder="Organisation" required>
+        <input type="email" name="email" placeholder="ihre@adresse.de" required>
+        <select name="anliegen">
+          <option value="">Worum geht es? (optional)</option>
+          <option>Vortrag</option>
+          <option>Workshop</option>
+          <option>Begleitung</option>
+          <option>Erst einmal ein Gespr&auml;ch</option>
+        </select>
+        <textarea name="nachricht" placeholder="Was besch&auml;ftigt Sie gerade?" required></textarea>
+        <input type="hidden" name="quelle" value="x-ness-business.de">
+        <button class="btn-primary" type="submit">Gespr&auml;ch anfragen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="haeuser-band" aria-label="Ein Werk, drei Orte">
+  <div class="section-inner">
+    <div class="eyebrow">Ein Werk &middot; Drei Orte</div>
+    <h2 style="font-size:30px;">Wo Sie gerade sind</h2>
+    <div class="haeuser-grid">
+      <a class="hd-haus" href="https://www.baumbast.de" target="_blank" rel="noopener">
+        <span class="hd-rolle">Das Werk</span>
+        <span class="hd-name">baumbast.de &rarr;</span>
+        <p class="hd-text">Sieben B&auml;nde, Texte, Glossar &mdash; die vollst&auml;ndige Analyse.</p>
+      </a>
+      <a class="hd-haus" href="https://www.non-elbows.org" target="_blank" rel="noopener">
+        <span class="hd-rolle">Der Bauplan</span>
+        <span class="hd-name">non-elbows.org &rarr;</span>
+        <p class="hd-text">Manifest, Kodex und die Manuale der Bewegung.</p>
+      </a>
+      <div class="hd-haus hd-hier">
+        <span class="hd-rolle">Das Werkzeug</span>
+        <span class="hd-name">x-ness-business.de</span>
+        <p class="hd-text">Die Aushandlungslast in Organisationen &mdash; Vortrag, Workshop, Begleitung.</p>
+        <span class="hd-marke">Sie sind hier</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
