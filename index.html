@@ -77,7 +77,7 @@ body {
 
 /* DREI HÄUSER */
 .haeuser-band { background: var(--gray); border-top: 1.5px solid var(--stone); }
-.haeuser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-md); }
+.haeuser-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: var(--sp-md); }
 .hd-haus {
   display: block; background: var(--white); border: 1.5px solid var(--stone);
   border-radius: 14px; padding: 32px 28px; text-decoration: none; color: var(--black);
@@ -408,7 +408,7 @@ section { padding: var(--sp-xl) var(--pad); }
 
 /* Drei Häuser */
 .haeuser-band { background: var(--gray); border-top: 1.5px solid var(--stone); }
-.haeuser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: var(--sp-md); }
+.haeuser-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: var(--sp-md); }
 .hd-haus { display: block; background: var(--white); border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; text-decoration: none; color: var(--black); transition: box-shadow .2s; }
 a.hd-haus:hover { box-shadow: 0 8px 24px rgba(17,17,17,.12); }
 .hd-hier { background: transparent; }
@@ -715,9 +715,9 @@ footer a:hover { color: var(--white); }
   </div>
 </section>
 
-<section class="haeuser-band" aria-label="Ein Werk, drei Orte">
+<section class="haeuser-band" aria-label="Ein Werk, vier Orte">
   <div class="section-inner">
-    <div class="eyebrow">Ein Werk &middot; Drei Orte</div>
+    <div class="eyebrow">Ein Werk &middot; Vier Orte</div>
     <h2 style="font-size:30px;">Wo Sie gerade sind</h2>
     <div class="haeuser-grid">
       <a class="hd-haus" href="https://www.baumbast.de" target="_blank" rel="noopener">
@@ -730,8 +730,13 @@ footer a:hover { color: var(--white); }
         <span class="hd-name">non-elbows.org &rarr;</span>
         <p class="hd-text">Manifest, Kodex und die Manuale der Bewegung.</p>
       </a>
-      <div class="hd-haus hd-hier">
+      <a class="hd-haus" href="https://www.x-ness.de" target="_blank" rel="noopener">
         <span class="hd-rolle">Das Werkzeug</span>
+        <span class="hd-name">x-ness.de &rarr;</span>
+        <p class="hd-text">Selbstinventur, Score und Workbook f&uuml;r den eigenen Anfang.</p>
+      </a>
+      <div class="hd-haus hd-hier">
+        <span class="hd-rolle">Die Anwendung</span>
         <span class="hd-name">x-ness-business.de</span>
         <p class="hd-text">Die Aushandlungslast in Organisationen &mdash; Vortrag, Workshop, Begleitung.</p>
         <span class="hd-marke">Sie sind hier</span>
