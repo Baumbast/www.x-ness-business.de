@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warum die Montagsrunde jede Woche von vorn beginnt | X-ness® Business</title>
+<meta name="description" content="In fast jedem Betrieb wird derselbe Zielkonflikt wöchentlich neu verhandelt, weil ihn nie jemand entschieden hat. Was das kostet — und warum die Abhilfe keine Investition verlangt, sondern eine Entscheidung.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/analyse_montagsrunde.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.x-ness-business.de/analyse_montagsrunde.html">
+<meta property="og:title" content="Warum die Montagsrunde jede Woche von vorn beginnt">
+<meta property="og:description" content="Nicht die Entscheidungen kosten die Kraft. Das Aushandeln davor kostet sie.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:  #111111;
+  --white:  #FFFFFF;
+  --gold:   #B89A55;
+  --stone:  #D7D2C8;
+  --taupe:  #7A6C5C;
+  --petrol: #3B6D73;
+  --gray:   #F5F4F2;
+  --serif:  'Non-Elbow-Sans', Georgia, serif;
+  --sans:   'Sen', system-ui, sans-serif;
+  --sp-xl:  96px;
+  --sp-lg:  64px;
+  --sp-md:  32px;
+  --sp-sm:  16px;
+  --max:    1280px;
+  --read:   720px;
+  --pad:    clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); font-size: 20px; color: var(--black);
+  background: var(--white); line-height: 1.5;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--black); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 400; color: var(--black); }
+
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone); padding: 0 var(--pad);
+}
+.nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 26px; list-style: none; }
+.nav-links a { font-size: 16px; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.hier { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+
+.btn-primary {
+  display: inline-block; background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  border: none; cursor: pointer; transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-line {
+  display: inline-block; font-family: var(--sans); font-size: 16px; font-weight: 700;
+  color: var(--black); text-decoration: none; padding: 14px 32px;
+  border: 1.5px solid var(--stone); border-radius: 10px; background: transparent; transition: border-color .2s;
+}
+.btn-line:hover { border-color: var(--black); }
+
+.a-hero { padding: calc(68px + var(--sp-lg)) var(--pad) var(--sp-lg); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.a-hero-inner { max-width: var(--read); margin: 0 auto; }
+.a-hero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.2; max-width: 22ch; }
+.a-hero h1 em { font-style: normal; color: var(--petrol); }
+.a-lead { font-size: clamp(18px, 2vw, 21px); color: var(--taupe); line-height: 1.65; margin-top: var(--sp-md); max-width: 62ch; }
+.a-meta { margin-top: var(--sp-md); padding-top: var(--sp-sm); border-top: 1.5px solid var(--stone); font-size: 14px; color: var(--taupe); }
+
+.a-body { max-width: var(--read); margin: 0 auto; padding: var(--sp-xl) var(--pad); }
+.a-body h2 {
+  font-size: clamp(26px, 3.2vw, 34px); line-height: 1.25;
+  margin-top: var(--sp-xl); margin-bottom: var(--sp-md); max-width: 24ch;
+}
+.a-body h2:first-child { margin-top: 0; }
+.a-body p { font-size: 19px; line-height: 1.75; color: var(--black); margin-bottom: var(--sp-md); }
+.a-body p.quiet { color: var(--taupe); }
+.a-punkt {
+  font-family: var(--serif); font-size: clamp(22px, 2.8vw, 30px); line-height: 1.4;
+  border-left: 2px solid var(--petrol); padding-left: 24px; margin: var(--sp-lg) 0;
+  color: var(--black);
+}
+
+.a-boxen { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: var(--sp-lg) 0; }
+.a-box { border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; background: var(--white); }
+.a-box.aus { background: transparent; }
+.a-box-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.a-box ul { list-style: none; }
+.a-box li {
+  font-size: 16px; color: var(--taupe); line-height: 1.55;
+  padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--stone);
+}
+.a-box li:last-child { border-bottom: none; }
+.a-box li::before { content: ''; position: absolute; left: 0; top: 20px; width: 8px; height: 1.5px; background: var(--gold); }
+@media (max-width: 720px) { .a-boxen { grid-template-columns: 1fr; } }
+
+.a-rechnung { border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 36px 32px; background: var(--white); margin: var(--sp-lg) 0; }
+.a-rechnung-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--sp-md); }
+.a-zeile { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid var(--stone); font-size: 16px; line-height: 1.5; }
+.a-zeile:first-of-type { border-top: none; padding-top: 0; }
+.a-zeile span:first-child { color: var(--taupe); }
+.a-zeile span:last-child { color: var(--black); white-space: nowrap; }
+.a-summe { display: flex; justify-content: space-between; gap: 20px; padding-top: 18px; margin-top: 6px; border-top: 1.5px solid var(--black); font-size: 17px; }
+.a-summe span:last-child { font-family: var(--serif); font-size: 24px; }
+
+.a-fragen { border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 40px 36px; background: var(--gray); margin: var(--sp-lg) 0; }
+.a-fragen h3 { font-size: 24px; margin-bottom: var(--sp-md); }
+.a-frage { padding: 20px 0; border-top: 1.5px solid var(--stone); display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+.a-frage:first-of-type { border-top: none; padding-top: 0; }
+.a-frage-num { font-family: var(--serif); font-size: 28px; color: var(--stone); line-height: 1.1; }
+.a-frage p { font-size: 17px; line-height: 1.65; color: var(--black); margin: 0; }
+.a-frage p span { display: block; margin-top: 8px; font-size: 15px; color: var(--taupe); }
+
+.a-quellen { margin-top: var(--sp-xl); padding-top: var(--sp-md); border-top: 1.5px solid var(--stone); }
+.a-quellen p { font-size: 15px; line-height: 1.7; color: var(--taupe); margin-bottom: var(--sp-sm); }
+.a-quellen a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--stone); }
+.a-quellen a:hover { border-color: var(--black); }
+
+.a-schluss { background: var(--gray); border-top: 1.5px solid var(--stone); padding: var(--sp-xl) var(--pad); }
+.a-schluss-inner { max-width: var(--read); margin: 0 auto; }
+.a-schluss h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--sp-md); max-width: 22ch; }
+.a-schluss p { font-size: 18px; line-height: 1.7; }
+.a-schluss-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: var(--sp-lg); }
+
+footer { background: var(--black); padding: var(--sp-lg) var(--pad); color: rgba(255,255,255,.4); font-size: 14px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die fünf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="analysen.html" class="hier">Analysen</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespräch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="a-hero">
+  <div class="a-hero-inner">
+    <div class="eyebrow">Analyse · Unternehmen</div>
+    <h1>Warum die Montagsrunde jede Woche <em>von vorn beginnt</em></h1>
+    <p class="a-lead">
+      In den meisten Betrieben wird derselbe Zielkonflikt wöchentlich neu verhandelt — nicht
+      weil die Beteiligten uneinsichtig wären, sondern weil ihn nie jemand entschieden hat.
+      Was das kostet, steht in keiner Auswertung. Und die Abhilfe verlangt keine
+      Investition, sondern eine Festlegung.
+    </p>
+    <p class="a-meta">Stand: August 2026 · Lesezeit etwa neun Minuten</p>
+  </div>
+</header>
+
+<article class="a-body">
+
+  <p>
+    Montag, neun Uhr. Geschäftsführung, Vertrieb, Produktion, Einkauf, Technik. Auf dem
+    Tisch liegt ein Auftrag, bei dem der Kunde den Termin um drei Wochen vorziehen will.
+  </p>
+  <p>
+    Der Vertrieb ist dafür. Der Kunde ist wichtig, der Wettbewerb sitzt daneben, und eine
+    Absage merkt man sich dort lange. Die Produktion ist dagegen. Vorziehen heißt umrüsten,
+    umrüsten heißt zwei andere Aufträge verschieben, und einer davon gehört ebenfalls einem
+    wichtigen Kunden. Der Einkauf wirft ein, dass das Material bei dieser Vorlaufzeit teurer
+    wird. Die Technik erinnert an die Wartung, die seit Februar geschoben wird.
+  </p>
+  <p>
+    Nach vierzig Minuten steht ein Kompromiss: Man zieht teilweise vor, verschiebt einen der
+    beiden anderen Aufträge und spricht mit dem betroffenen Kunden. Eine vernünftige Lösung,
+    von vernünftigen Leuten gefunden.
+  </p>
+  <p class="quiet">
+    Nächsten Montag liegt ein anderer Auftrag auf dem Tisch. Dieselbe Konstellation,
+    dieselben Argumente, dieselben vierzig Minuten. Und wieder hat niemand einen Fehler
+    gemacht.
+  </p>
+
+  <h2>Der Konflikt ist nicht das Problem</h2>
+
+  <p>
+    Der übliche Erklärungsversuch lautet: Kommunikationsproblem. Vertrieb und Produktion
+    verstehen einander nicht, es fehlt an Vertrauen, man müsste die Zusammenarbeit
+    verbessern. Darauf folgen Teamtage, gemeinsame Ziele, ein neues Format für die Runde.
+  </p>
+  <p>
+    Das geht am Kern vorbei, und zwar erkennbar: Die Beteiligten verstehen einander sehr
+    genau. Jeder kennt das Argument des anderen, oft besser als das eigene, weil er es seit
+    Jahren hört. Was fehlt, ist nicht Verständnis. Was fehlt, ist eine Festlegung, die
+    vorher getroffen wurde.
+  </p>
+  <p>
+    Denn hinter der wöchentlichen Debatte steht immer derselbe Zielkonflikt: Liefertreue
+    gegen Auslastung, Kundenbindung gegen Marge, Termin gegen Rüstkosten. Dieser Konflikt
+    ist real, er ist unvermeidlich, und er hat keine allgemeingültige Auflösung. Er hat aber
+    eine mögliche Rangfolge — und die hat nie jemand ausgesprochen.
+  </p>
+
+  <p class="a-punkt">
+    Solange oben nicht entschieden ist, was im Zweifel vorgeht,<br>
+    wird es unten jede Woche neu verhandelt.
+  </p>
+
+  <h2>Warum die Festlegung ausbleibt</h2>
+
+  <p>
+    Nicht aus Führungsschwäche. Aus einer Asymmetrie, die der Verwaltung ähnelt und im
+    Betrieb noch schärfer ist.
+  </p>
+  <p>
+    Wer festlegt, dass im Zweifel der Termin vorgeht, verantwortet die Marge, die dabei
+    verloren geht — sichtbar, in Zahlen, im nächsten Quartalsgespräch. Wer festlegt, dass im
+    Zweifel die Marge vorgeht, verantwortet den Kunden, der abspringt. Beide Entscheidungen
+    haben eine Adresse.
+  </p>
+  <p>
+    Wer dagegen nichts festlegt, hat immer den Einzelfall. Und jeder Einzelfall lässt sich
+    begründen: Diesmal war der Kunde eben besonders wichtig, diesmal war die Auslastung eben
+    besonders knapp. Die Nichtentscheidung ist die einzige Option, die nie falsch aussieht.
+    Ihr Preis fällt woanders an — in der Zeit der Führungsmannschaft, und zwar in kleinen
+    Beträgen, jede Woche, über Jahre.
+  </p>
+
+  <h2>Die Rechnung, die niemand aufmacht</h2>
+
+  <p>
+    Rechnen Sie es einmal für Ihren Betrieb durch. Die Zahlen unten sind ein Beispiel, die
+    Größenordnung ist keines.
+  </p>
+
+  <div class="a-rechnung">
+    <div class="a-rechnung-label">Ein wiederkehrender Zielkonflikt, ein Jahr</div>
+    <div class="a-zeile"><span>Fünf Führungskräfte, vierzig Minuten, fünfundvierzig Wochen</span><span>150 Std.</span></div>
+    <div class="a-zeile"><span>Vorbereitung und Nachlauf, geschätzt ein Drittel davon</span><span>50 Std.</span></div>
+    <div class="a-zeile"><span>Gespräche mit Kunden, deren Termin verschoben wurde</span><span>schwer messbar</span></div>
+    <div class="a-zeile"><span>Rüstvorgänge, die bei klarer Regel entfallen wären</span><span>schwer messbar</span></div>
+    <div class="a-summe"><span>Sichtbarer Teil, in der teuersten Arbeitszeit des Hauses</span><span>200 Std.</span></div>
+  </div>
+
+  <p>
+    Zweihundert Stunden sind fünf Arbeitswochen einer Führungskraft — für einen einzigen
+    ungeklärten Zielkonflikt. Die meisten Betriebe haben drei bis fünf davon.
+  </p>
+  <p>
+    Der größere Posten steht allerdings nicht in dieser Aufstellung, weil er aus dem
+    besteht, was nicht geschieht. Entscheidungen, die eine Person treffen könnte, warten bis
+    Montag, weil man sie „in der Runde" bespricht. Der Vorgang liegt also nicht vierzig
+    Minuten, sondern bis zu sechs Tage. Bei einem Betrieb mit vierzig solcher Vorgänge im
+    Monat ist die Warteschlange die eigentliche Durchlaufzeit — nicht die Bearbeitung.
+  </p>
+
+  <h2>Und der stillste Posten von allen</h2>
+
+  <p>
+    Ein Nebeneffekt, der selten bemerkt wird, weil er wie Ordnung aussieht: Sobald es die
+    Runde gibt, hört das Gespräch unter der Woche auf. Der Disponent ruft den Vertrieb nicht
+    mehr an, weil das ja Montag Thema ist. Der Vertrieb fragt in der Produktion nicht mehr
+    nach, weil er die Antwort ohnehin in der Runde bekommt.
+  </p>
+  <p>
+    Die Besprechung, die den Austausch sichern sollte, hat ihn ersetzt. Was vorher
+    nebenbei geklärt wurde, wird jetzt gesammelt, aufgestaut und einmal wöchentlich
+    abgearbeitet. Das ist kein Verhalten, das man jemandem vorwerfen kann. Es ist die
+    logische Folge davon, dass es einen zuständigen Ort gibt — und die teuerste Form von
+    Ordnung, die ein Betrieb sich einrichten kann.
+  </p>
+
+  <h2>Der Unterschied zur Behörde</h2>
+
+  <p>
+    In der öffentlichen Verwaltung entsteht dieselbe Last, aber aus einer anderen Quelle:
+    dort kommen die widersprüchlichen Vorgaben von außen, aus Gesetzen und Programmen, die
+    nie miteinander in Rangfolge gebracht wurden. Ein Amt kann diese Last beschreiben und
+    vortragen — senken kann es sie kaum.
+  </p>
+  <p>
+    Im Unternehmen ist das anders, und darin liegt die gute Nachricht. Was innen entsteht,
+    kann innen entschieden werden. Es braucht dafür weder eine Gesetzesänderung noch eine
+    Genehmigung noch ein Budget. Es braucht jemanden, der bereit ist, eine Festlegung zu
+    treffen und mit ihrem Preis zu leben.
+  </p>
+
+  <p class="a-punkt">
+    Das ist keine Investition.<br>Das ist eine Entscheidung.
+  </p>
+
+  <p class="quiet">
+    Kostenlos ist sie deshalb nicht. Sie kostet Führungsaufmerksamkeit, sie kostet den Mut,
+    sich festzulegen, und sie kostet den Verzicht auf die Bequemlichkeit des Einzelfalls.
+    Aber sie verlangt keine Anschaffung, keine Software und keine zusätzliche Stelle. Sie
+    legt Kapazität frei, die bereits vorhanden ist und derzeit verbraucht wird.
+  </p>
+
+  <h2>Nicht jede Runde gehört abgeschafft</h2>
+
+  <p>
+    Ein Missverständnis wäre, die Besprechung zu streichen. Ein Betrieb, in dem die
+    Führungsmannschaft nicht mehr regelmäßig zusammensitzt, hat kein Problem gelöst, sondern
+    ein neues. Die Frage ist nicht, ob die Runde stattfindet, sondern womit sie sich
+    beschäftigt.
+  </p>
+
+  <div class="a-boxen">
+    <div class="a-box">
+      <div class="a-box-label">Gehört in die Runde</div>
+      <ul>
+        <li>Echte Ausnahmen, für die keine Regel passt</li>
+        <li>Fälle, in denen die geltende Festlegung offenbar nicht mehr trägt</li>
+        <li>Entscheidungen mit erheblicher Tragweite</li>
+        <li>Das gemeinsame Bild der nächsten Wochen</li>
+      </ul>
+    </div>
+    <div class="a-box aus">
+      <div class="a-box-label">Gehört nicht hinein</div>
+      <ul>
+        <li>Der Zielkonflikt, der schon vierzig Mal dieselbe Antwort bekam</li>
+        <li>Vorgänge unterhalb einer Wert- oder Tragweitengrenze</li>
+        <li>Abstimmungen, die zwei Personen in fünf Minuten klären</li>
+        <li>Auskünfte, die auch als Nachricht möglich wären</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    Die linke Spalte ist formende Reibung: Auseinandersetzung, die das Ergebnis besser macht.
+    Die rechte ist blockierende: Auseinandersetzung, die nur deshalb stattfindet, weil eine
+    Vorentscheidung fehlt. Der Unterschied ist nicht die Lautstärke, sondern die Frage, ob
+    dieselbe Debatte beim nächsten Mal wiederkehrt.
+  </p>
+
+  <h2>Wo Festlegungen verloren gehen</h2>
+
+  <p>
+    Eine Beobachtung zum Schluss, die den meisten Betrieben teurer kommt als alles andere:
+    Vorentscheidungen werden getroffen — und verschwinden. Man einigt sich im Frühjahr auf
+    eine Regel, hält sie in einem Protokoll fest, und im Herbst weiß niemand mehr, was
+    genau vereinbart war. Also wird neu verhandelt.
+  </p>
+  <p>
+    Eine Festlegung, die nicht auffindbar ist, existiert nicht. Sie muss an einem Ort
+    stehen, den derjenige kennt, der sie braucht — nicht im Protokoll der einundzwanzigsten
+    Sitzung, sondern dort, wo der Vorgang bearbeitet wird. Das ist banal und wird fast
+    überall unterlassen.
+  </p>
+
+  <div class="a-fragen">
+    <h3>Drei Fragen für die nächste Runde</h3>
+    <div class="a-frage">
+      <div class="a-frage-num">1</div>
+      <p>
+        Welcher Zielkonflikt kommt bei uns in fast jeder Besprechung vor — und was gilt bei
+        uns, wenn er auftritt?
+        <span>Wenn die zweite Hälfte der Frage keine klare Antwort hat, haben Sie den Posten
+        gefunden.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">2</div>
+      <p>
+        Wie viele Vorgänge warten bei uns auf die nächste Runde, obwohl eine Person sie
+        entscheiden könnte?
+        <span>Nicht die Bearbeitungszeit bestimmt die Durchlaufzeit, sondern die Wartezeit
+        davor.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">3</div>
+      <p>
+        Wo steht, was wir beim letzten Mal entschieden haben — und findet es der Nächste
+        ohne zu fragen?
+        <span>Was nicht auffindbar ist, wird neu verhandelt. Zuverlässig und für immer.</span>
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Keine dieser Fragen verlangt eine Umstrukturierung. Sie verlangen etwas, das
+    unangenehmer ist: eine Festlegung dort, wo man sich bisher den Einzelfall offengehalten
+    hat. Der Ertrag ist keine bessere Stimmung, sondern zurückgewonnene Kapazität — in der
+    teuersten Arbeitszeit, die ein Betrieb hat.
+  </p>
+
+  <div class="a-quellen">
+    <p>
+      Verwandte Analysen:
+      <a href="analyse_silos.html">Das Silo ist keine Haltung</a> ·
+      <a href="analyse_meritorik.html">Wer die Bürokratie erzeugt — und wer sie bezahlt</a>
+    </p>
+  </div>
+
+</article>
+
+<section class="a-schluss">
+  <div class="a-schluss-inner">
+    <div class="eyebrow">Wenn Ihnen das bekannt vorkommt</div>
+    <h2>Die eigenen Zielkonflikte einmal auf den Tisch legen</h2>
+    <p>
+      Im Workshop wird genau das gemacht: die wiederkehrenden Aushandlungen eines Betriebs
+      benennen, sie entlang der fünf Profile sortieren und entscheiden, welche davon künftig
+      vorentschieden sind. Einen Tag mit der Führungsmannschaft, danach ein gemeinsames
+      Bild. Ob das für Ihre Lage passt, klären wir vorher in einem halbstündigen Gespräch.
+    </p>
+    <div class="a-schluss-row">
+      <a href="index.html#gespraech" class="btn-primary">Gespräch vereinbaren</a>
+      <a href="analysen.html" class="btn-line">Weitere Analysen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="analysen.html">Analysen</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>
