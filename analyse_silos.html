@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Silo ist keine Haltung — es ist eine Zuständigkeitsordnung | X-ness® Business</title>
+<meta name="description" content="Silodenken gilt als Mentalitätsproblem. Am Tübinger Ziegenmelker-Fall lässt sich zeigen, dass es keines ist: Sieben Häuser, jedes im Recht, und trotzdem bewegt sich nichts.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/analyse_silos.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.x-ness-business.de/analyse_silos.html">
+<meta property="og:title" content="Das Silo ist keine Haltung — es ist eine Zuständigkeitsordnung">
+<meta property="og:description" content="Sieben Häuser, jedes im Recht, und trotzdem bewegt sich nichts. Über die Grenzen des Appells an bessere Zusammenarbeit.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:  #111111;
+  --white:  #FFFFFF;
+  --gold:   #B89A55;
+  --stone:  #D7D2C8;
+  --taupe:     #7A6C5C;
+  --petrol: #3B6D73;
+  --gray:   #F5F4F2;
+  --serif:  'Non-Elbow-Sans', Georgia, serif;
+  --sans:   'Sen', system-ui, sans-serif;
+  --sp-xl:  96px;
+  --sp-lg:  64px;
+  --sp-md:  32px;
+  --sp-sm:  16px;
+  --max:    1280px;
+  --read:   720px;
+  --pad:    clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); font-size: 20px; color: var(--black);
+  background: var(--white); line-height: 1.5;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--black); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 400; color: var(--black); }
+
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone); padding: 0 var(--pad);
+}
+.nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 26px; list-style: none; }
+.nav-links a { font-size: 16px; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.hier { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+
+.btn-primary {
+  display: inline-block; background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  border: none; cursor: pointer; transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-line {
+  display: inline-block; font-family: var(--sans); font-size: 16px; font-weight: 700;
+  color: var(--black); text-decoration: none; padding: 14px 32px;
+  border: 1.5px solid var(--stone); border-radius: 10px; background: transparent; transition: border-color .2s;
+}
+.btn-line:hover { border-color: var(--black); }
+
+.a-hero { padding: calc(68px + var(--sp-lg)) var(--pad) var(--sp-lg); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.a-hero-inner { max-width: var(--read); margin: 0 auto; }
+.a-hero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.2; max-width: 22ch; }
+.a-hero h1 em { font-style: normal; color: var(--petrol); }
+.a-lead { font-size: clamp(18px, 2vw, 21px); color: var(--taupe); line-height: 1.65; margin-top: var(--sp-md); max-width: 62ch; }
+.a-meta { margin-top: var(--sp-md); padding-top: var(--sp-sm); border-top: 1.5px solid var(--stone); font-size: 14px; color: var(--taupe); }
+
+.a-body { max-width: var(--read); margin: 0 auto; padding: var(--sp-xl) var(--pad); }
+.a-body h2 {
+  font-size: clamp(26px, 3.2vw, 34px); line-height: 1.25;
+  margin-top: var(--sp-xl); margin-bottom: var(--sp-md); max-width: 24ch;
+}
+.a-body h2:first-child { margin-top: 0; }
+.a-body p { font-size: 19px; line-height: 1.75; color: var(--black); margin-bottom: var(--sp-md); }
+.a-body p.quiet { color: var(--taupe); }
+.a-punkt {
+  font-family: var(--serif); font-size: clamp(22px, 2.8vw, 30px); line-height: 1.4;
+  border-left: 2px solid var(--petrol); padding-left: 24px; margin: var(--sp-lg) 0;
+  color: var(--black);
+}
+.a-haeuser { border: 1.5px solid var(--stone); border-radius: 14px; padding: 36px 32px; margin: var(--sp-lg) 0; background: var(--white); }
+.a-haeuser-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--sp-sm); }
+.a-haus { display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 14px 0; border-top: 1px solid var(--stone); font-size: 16px; line-height: 1.55; }
+.a-haus:first-of-type { border-top: none; }
+.a-haus-name { color: var(--black); }
+.a-haus-rolle { color: var(--taupe); }
+@media (max-width: 640px) { .a-haus { grid-template-columns: 1fr; gap: 4px; } }
+
+.a-boxen { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: var(--sp-lg) 0; }
+.a-box { border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; background: var(--white); }
+.a-box.aus { background: transparent; }
+.a-box-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.a-box ul { list-style: none; }
+.a-box li {
+  font-size: 16px; color: var(--taupe); line-height: 1.55;
+  padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--stone);
+}
+.a-box li:last-child { border-bottom: none; }
+.a-box li::before { content: ''; position: absolute; left: 0; top: 20px; width: 8px; height: 1.5px; background: var(--gold); }
+@media (max-width: 720px) { .a-boxen { grid-template-columns: 1fr; } }
+
+.a-fragen { border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 40px 36px; background: var(--gray); margin: var(--sp-lg) 0; }
+.a-fragen h3 { font-size: 24px; margin-bottom: var(--sp-md); }
+.a-frage { padding: 20px 0; border-top: 1.5px solid var(--stone); display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+.a-frage:first-of-type { border-top: none; padding-top: 0; }
+.a-frage-num { font-family: var(--serif); font-size: 28px; color: var(--stone); line-height: 1.1; }
+.a-frage p { font-size: 17px; line-height: 1.65; color: var(--black); margin: 0; }
+.a-frage p span { display: block; margin-top: 8px; font-size: 15px; color: var(--taupe); }
+
+.a-quellen { margin-top: var(--sp-xl); padding-top: var(--sp-md); border-top: 1.5px solid var(--stone); }
+.a-quellen p { font-size: 15px; line-height: 1.7; color: var(--taupe); margin-bottom: var(--sp-sm); }
+.a-quellen a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--stone); }
+.a-quellen a:hover { border-color: var(--black); }
+
+.a-schluss { background: var(--gray); border-top: 1.5px solid var(--stone); padding: var(--sp-xl) var(--pad); }
+.a-schluss-inner { max-width: var(--read); margin: 0 auto; }
+.a-schluss h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--sp-md); max-width: 22ch; }
+.a-schluss p { font-size: 18px; line-height: 1.7; }
+.a-schluss-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: var(--sp-lg); }
+
+footer { background: var(--black); padding: var(--sp-lg) var(--pad); color: rgba(255,255,255,.4); font-size: 14px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die fünf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="analysen.html" class="hier">Analysen</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespräch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="a-hero">
+  <div class="a-hero-inner">
+    <div class="eyebrow">Analyse · Struktur</div>
+    <h1>Das Silo ist keine Haltung — es ist eine <em>Zuständigkeitsordnung</em></h1>
+    <p class="a-lead">
+      Über Silodenken wird geschrieben, als handle es sich um einen Charakterfehler von
+      Abteilungen. Ein bekannter Fall aus Baden-Württemberg zeigt, dass es keiner ist:
+      Sieben Häuser waren beteiligt, jedes hat sich korrekt verhalten, und trotzdem stand
+      ein Vorhaben jahrelang still.
+    </p>
+    <p class="a-meta">Stand: August 2026 · Lesezeit etwa neun Minuten</p>
+  </div>
+</header>
+
+<article class="a-body">
+
+  <p>
+    Im Gebiet des Tübinger Universitätsklinikums hatte über Jahre hinweg ein Ziegenmelker
+    sein Revier — ein nachtaktiver, streng geschützter Vogel, der auf der Roten Liste
+    steht. Gesichtet wurde er zuletzt 2023. Gebaut werden durfte trotzdem nicht: Die Fläche
+    galt weiterhin als Erwartungsland, weil der Vogel zurückkehren könnte. Im Raum stand,
+    als Ausgleich Wald am Steinenberg zu roden, damit ein neuer Offenland-Lebensraum
+    entsteht — eine Rodung, die ihrerseits nach Landeswaldgesetz hätte ausgeglichen werden
+    müssen.
+  </p>
+  <p>
+    Der Tübinger Oberbürgermeister machte den Fall Anfang 2024 öffentlich und wandte sich an
+    den Ministerpräsidenten. Das Staatsministerium sagte Unterstützung zu und bat die
+    betroffenen Ministerien, aufeinander zuzugehen. Gut ein halbes Jahr später lagen zwei
+    neue Gutachten vor — eines vom Klinikum beauftragt, eines vom Landesbetrieb Vermögen
+    und Bau. Beide kamen zu dem Ergebnis, dass der Vogel das Revier aufgegeben hat.
+    Daraufhin teilte das Regierungspräsidium mit, dass der Erweiterung aus
+    naturschutzfachlicher und -rechtlicher Sicht nichts mehr entgegenstehe.
+  </p>
+  <p class="quiet">
+    Erzählt wird dieser Vorgang meist als Bürokratie-Posse. Ich halte diese Erzählung für
+    falsch — und zwar nicht aus Rücksicht, sondern weil sie den interessanten Teil
+    verdeckt.
+  </p>
+
+  <h2>Niemand hat sich falsch verhalten</h2>
+
+  <p>
+    Der Artenschutz für europäische Vogelarten ist materielles Recht, unionsrechtlich
+    unterlegt und dem Ermessen einer Behörde weitgehend entzogen. Eine Naturschutzbehörde,
+    die eine Fläche trotz belastbarer Hinweise freigibt, handelt nicht mutig, sondern
+    rechtswidrig. Auch die Vorsorgelogik hinter dem Erwartungsland ist nicht abwegig: Wer
+    einen Lebensraum überbaut, kann ihn nicht zurückholen, wenn sich die Einschätzung
+    später als falsch erweist. Fehler in dieser Richtung sind endgültig, Fehler in der
+    anderen Richtung kosten Zeit. Eine Behörde, die diese Asymmetrie ernst nimmt,
+    entscheidet vorsichtig — und sie tut das nicht aus Trägheit, sondern weil das Recht sie
+    genau dazu anhält.
+  </p>
+  <p>
+    Ebenso wenig lässt sich dem Oberbürgermeister ein Vorwurf machen. Er hat öffentlich
+    gesagt, dass er die Verantwortung gern übernommen hätte, dafür aber persönlich
+    eingestanden wäre. Das ist keine Ausrede, sondern eine zutreffende Beschreibung der
+    Haftungslage.
+  </p>
+  <p>
+    Sieht man sich an, wer an dem Vorgang beteiligt war, wird das Muster deutlich.
+  </p>
+
+  <div class="a-haeuser">
+    <div class="a-haeuser-label">Beteiligte Häuser, jeweils zuständig für einen Ausschnitt</div>
+    <div class="a-haus"><span class="a-haus-name">Stadt Tübingen</span><span class="a-haus-rolle">Bebauungsplanung, kommunale Verantwortung für das Vorhaben</span></div>
+    <div class="a-haus"><span class="a-haus-name">Regierungspräsidium</span><span class="a-haus-rolle">Naturschutzfachliche und -rechtliche Bewertung</span></div>
+    <div class="a-haus"><span class="a-haus-name">Universitätsklinikum</span><span class="a-haus-rolle">Bauherr und medizinischer Versorgungsauftrag</span></div>
+    <div class="a-haus"><span class="a-haus-name">Universität</span><span class="a-haus-rolle">Forschungs- und Flächeninteressen am Standort</span></div>
+    <div class="a-haus"><span class="a-haus-name">Vermögen und Bau BW</span><span class="a-haus-rolle">Landesliegenschaften und Baudurchführung</span></div>
+    <div class="a-haus"><span class="a-haus-name">Mehrere Ministerien</span><span class="a-haus-rolle">Umwelt, Wissenschaft, Finanzen — je eigene Fachaufsicht</span></div>
+    <div class="a-haus"><span class="a-haus-name">Staatsministerium</span><span class="a-haus-rolle">Erst am Ende beteiligt, dann als einzige verbindende Stelle</span></div>
+  </div>
+
+  <p>
+    Jedes dieser Häuser war für einen Ausschnitt zuständig. Keines für das Ganze. Das ist
+    der Befund, und er hat nichts mit Mentalität zu tun.
+  </p>
+
+  <h2>Zuständigkeit ist kein Betriebsklima</h2>
+
+  <p>
+    In der Managementliteratur gilt das Silo als Haltungsproblem: Abteilungsdenken,
+    Bereichsegoismus, mangelnde Kommunikationsbereitschaft. Die Therapie besteht
+    entsprechend aus Appellen, Workshops zur Zusammenarbeit und Bekenntnissen zur
+    gemeinsamen Sache. In einem Unternehmen mag das gelegentlich verfangen. In einer
+    Verwaltung geht es am Kern vorbei.
+  </p>
+  <p>
+    Denn Zuständigkeit ist dort kein Organigrammdetail, sondern ein Rechtsbegriff. Sie
+    stellt sicher, dass über einen Bürger nicht irgendwer entscheidet, sondern die Stelle,
+    die dafür bestimmt, fachlich ausgestattet und kontrollierbar ist. Wer seine
+    Zuständigkeit überschreitet, produziert einen angreifbaren Verwaltungsakt und haftet
+    unter Umständen persönlich. Wer sie eng auslegt, tut nichts Verbotenes. Die Haftung ist
+    einseitig verteilt: Für das Zuviel wird man belangt, für das Zuwenig fast nie.
+  </p>
+
+  <p class="a-punkt">
+    Das Silo ist keine Verweigerung von Zusammenarbeit.<br>
+    Es ist die vernünftige Antwort auf eine einseitige Haftung.
+  </p>
+
+  <p>
+    Wer das übersieht, kommt mit dem falschen Werkzeug. Ein Appell an mehr Miteinander
+    trifft Menschen, die sich bereits korrekt verhalten, und beschämt sie für etwas, das
+    nicht in ihrer Hand liegt. Das erzeugt keine Öffnung, sondern Rückzug — und im
+    ungünstigen Fall einen Verwaltungsvorgang mehr, weil man sich künftig absichert, wo man
+    vorher noch entschieden hätte.
+  </p>
+
+  <h2>Welche Zuständigkeit dient — und welche nur trennt</h2>
+
+  <p>
+    Damit ist das Silo nicht aus der Welt. Es heißt nur, dass die Frage anders gestellt
+    werden muss. Nicht: Wie überwinden wir Abteilungsgrenzen? Sondern: Welche Grenze in
+    diesem Verfahren formt das Ergebnis — und welche hält es nur auf?
+  </p>
+
+  <div class="a-boxen">
+    <div class="a-box">
+      <div class="a-box-label">Formende Trennung</div>
+      <ul>
+        <li>Der Fachdienst prüft, was nur er beurteilen kann</li>
+        <li>Vier-Augen-Prinzip bei eingreifenden Entscheidungen</li>
+        <li>Die Anhörung, die Fehlannahmen sichtbar macht</li>
+        <li>Trennung von Antrag und Kontrolle</li>
+      </ul>
+    </div>
+    <div class="a-box aus">
+      <div class="a-box-label">Blockierende Trennung</div>
+      <ul>
+        <li>Derselbe Sachverhalt wird in drei Häusern neu geprüft</li>
+        <li>Ein Vorgang wechselt das Medium, weil eine Schnittstelle fehlt</li>
+        <li>Niemand ist zuständig, den Gesamtstand zu kennen</li>
+        <li>Bei Uneinigkeit gibt es keinen Vorrang, nur den Instanzenweg</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    Die linke Spalte ist der Grund, warum Verwaltung funktioniert. Die rechte ist der
+    Grund, warum sie sich anfühlt, als funktioniere sie nicht. Wer beide nicht
+    unterscheidet, schafft im Zweifel die linke ab — schneller, günstiger, digitaler, und
+    am Ende ohne den Schutz, um dessentwillen das Verfahren überhaupt existiert.
+  </p>
+
+  <h2>Der teuerste Posten ist der unsichtbarste</h2>
+
+  <p>
+    Was einen Vorgang zwischen Häusern wirklich verlangsamt, ist selten der Konflikt.
+    Konflikte werden ausgetragen, protokolliert und irgendwann entschieden. Teuer ist das
+    Gegenteil: das Gespräch, das nie stattfindet, weil sich niemand zuständig fühlt, es zu
+    beginnen.
+  </p>
+  <p>
+    Ein Sachbearbeiter im Amt A weiß, dass sein Vorgang in Amt B an einer bestimmten Stelle
+    hängen bleiben wird. Er ruft nicht an. Nicht aus Bosheit, sondern weil es dafür keine
+    Rolle gibt: kein Auftrag, keine Zeit im Stellenplan, kein Verfahrensschritt, unter den
+    sich das Telefonat buchen ließe. Also läuft der Vorgang seinen Weg, kommt drei Wochen
+    später zurück und beginnt von vorn. Es gibt keinen Beteiligten, der etwas falsch
+    gemacht hätte, und es gibt keine Spur — keinen Vermerk, keine Beschwerde, nur einen
+    Vorgang, der langsamer war, als er hätte sein müssen.
+  </p>
+  <p class="quiet">
+    In der Summe ist dieses Nichtzustandekommen der größte Posten der Aushandlungslast
+    zwischen Häusern. Er steht in keiner Statistik, weil das, was nicht stattgefunden hat,
+    nirgends erfasst wird.
+  </p>
+
+  <h2>Silos entstehen nicht im Rathaus</h2>
+
+  <p>
+    Ein Punkt, der in der Debatte fast immer fehlt: Eine Kommune baut ihre Silos nicht
+    selbst. Sie erbt sie. Fachrecht kommt jeweils mit eigener Aufsicht und eigener
+    Nachweislogik. Förderprogramme kommen mit eigenen Fristen, eigenen Formularen und
+    eigenen Verwendungsnachweisen, die selten zueinander passen. Die Ressortgrenzen des
+    Landes und des Bundes bilden sich in den Ämtern vor Ort exakt ab, weil jedes Amt an
+    seiner Fachaufsicht hängt.
+  </p>
+  <p>
+    Der Silo im Amt ist das Spiegelbild des Silos im Ministerium. Wer den Kommunen
+    vorwirft, in Zuständigkeiten zu denken, wirft ihnen vor, die Ordnung abzubilden, in die
+    man sie gestellt hat.
+  </p>
+
+  <h2>Warum der Tübinger Fall nichts gelöst hat</h2>
+
+  <p>
+    Zurück zum Ziegenmelker. Der Vorgang ist beendet, das Vorhaben kann weitergehen. Aber
+    man sollte sich ansehen, wodurch.
+  </p>
+  <p>
+    Bewegt hat sich nichts an der Struktur. Bewegt hat sich der Vogel. Zwei Gutachten haben
+    bestätigt, dass er nicht mehr da ist — die tatsächliche Grundlage der Blockade ist
+    entfallen, nicht ihre Konstruktion. Wäre der Ziegenmelker zurückgekehrt, stünde alles
+    wieder wie zuvor.
+  </p>
+  <p>
+    Und der Weg dorthin führte über die Spitze des Landes: ein Schreiben an den
+    Ministerpräsidenten, eine Zusage des Staatsministeriums, eine Bitte an die betroffenen
+    Ressorts, aufeinander zuzugehen. Das ist der Beleg für den Befund, nicht seine
+    Widerlegung. Ein System, dessen Fälle nur oberhalb der Silos zusammengeführt werden
+    können, hat unterhalb keine Stelle, die das könnte. Wer in derselben Konstellation
+    steckt, aber nicht in einer Talkshow sitzt und keinen kurzen Draht in die
+    Staatskanzlei hat, wartet weiter.
+  </p>
+
+  <p class="a-punkt">
+    Gelöst wurde ein Fall.<br>
+    Die Konstellation, die ihn erzeugt hat, steht unverändert.
+  </p>
+
+  <h2>Was das neue Erprobungsrecht hier nicht leisten kann</h2>
+
+  <p>
+    Der Oberbürgermeister hat aus dem Fall eine Forderung abgeleitet, die inzwischen häufig
+    zu hören ist: begründete Abweichungskompetenz für die unterste Ebene. Der Gedanke ist
+    richtig, und er klingt nach dem <a href="analyse_bundeserprobungsgesetz.html" style="color:var(--black);">Bundeserprobungsgesetz</a>,
+    das der Bundestag im Juli 2026 beschlossen hat.
+  </p>
+  <p>
+    Nur hätte dieses Gesetz im Tübinger Fall nicht geholfen. Seine allgemeine
+    Erprobungsklausel erlaubt Abweichungen von Verfahren, Form, Zuständigkeiten und
+    Ausstattung. Vom materiellen Recht darf nicht abgewichen werden, und höherrangigem
+    Recht — also auch dem europäischen Artenschutz — schon gar nicht. Der bekannteste
+    Bürokratiefall des Landes wäre mit dem neuen Gesetz genauso ausgegangen.
+  </p>
+  <p class="quiet">
+    Das ist kein Einwand gegen das Gesetz. Es ist ein Hinweis darauf, wo die Arbeit
+    tatsächlich liegt: nicht in der Frage, welche Vorschrift man aussetzen darf, sondern in
+    der Frage, wie viele Häuser sich über einen Vorgang verständigen müssen, bevor
+    irgendjemand entscheiden kann.
+  </p>
+
+  <h2>Was sich stattdessen ändern lässt</h2>
+
+  <p>
+    Silos lassen sich nicht abschaffen, ohne den Schutz mit abzuschaffen, den sie
+    herstellen. Was sich senken lässt, ist die Last, die zwischen ihnen entsteht — und
+    zwar durch Vorentscheidungen. Alles, was einmal verbindlich geklärt ist, muss nicht
+    mehr in jedem Einzelfall neu ausgehandelt werden.
+  </p>
+
+  <div class="a-fragen">
+    <h3>Drei Fragen für die eigene Lage</h3>
+    <div class="a-frage">
+      <div class="a-frage-num">1</div>
+      <p>
+        Bei welchen wiederkehrenden Vorgängen ist nirgends hinterlegt, wer im Konfliktfall
+        Vorrang hat?
+        <span>Fehlt der Vorrang, wird bei jedem Fall neu verhandelt — und zwar von Menschen,
+        die beide im Recht sind.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">2</div>
+      <p>
+        Wer darf bei uns über die Hausgrenze hinweg das Telefon in die Hand nehmen, ohne
+        sich dafür rechtfertigen zu müssen?
+        <span>Wenn niemand diese Rolle hat, unterbleibt das Gespräch — und zwar zuverlässig,
+        weil alle Beteiligten korrekt handeln.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">3</div>
+      <p>
+        Welche Prüfung wird bei uns ein zweites Mal vorgenommen, weil das Ergebnis der
+        ersten nicht auffindbar ist?
+        <span>Doppelprüfungen entstehen selten aus Misstrauen. Meist entstehen sie, weil ein
+        Ergebnis nirgends abgelegt wurde, wo der Nächste es findet.</span>
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Keine dieser Fragen verlangt eine Gesetzesänderung. Sie verlangen etwas Schwierigeres:
+    dass ein Haus einmal beschreibt, was es tatsächlich jedes Mal neu verhandelt — und dann
+    entscheidet, was davon in Zukunft vorentschieden sein soll.
+  </p>
+
+  <div class="a-quellen">
+    <p>
+      <strong>Grundlage:</strong> Berichterstattung zum Erweiterungsbau des
+      Universitätsklinikums Tübingen aus den Jahren 2024 und 2025, insbesondere im
+      Reutlinger General-Anzeiger, sowie öffentliche Äußerungen des Tübinger
+      Oberbürgermeisters. Rechtliche Einordnung nach dem Bundesnaturschutzgesetz und dem
+      Bundeserprobungsgesetz in der vom Bundestag beschlossenen Fassung. Die Wiedergabe
+      erfolgt sinngemäß.
+    </p>
+  </div>
+
+</article>
+
+<section class="a-schluss">
+  <div class="a-schluss-inner">
+    <div class="eyebrow">Wenn Ihnen das bekannt vorkommt</div>
+    <h2>Beschreiben, was jedes Mal neu verhandelt wird</h2>
+    <p>
+      Genau das ist die Arbeit im Workshop: die wiederkehrenden Aushandlungen eines Hauses
+      sichtbar machen, sie in formende und blockierende trennen und benennen, was künftig
+      vorentschieden sein soll. Ob das für Ihre Lage passt, klären wir vorher in einem
+      halbstündigen Gespräch.
+    </p>
+    <div class="a-schluss-row">
+      <a href="index.html#gespraech" class="btn-primary">Gespräch vereinbaren</a>
+      <a href="analysen.html" class="btn-line">Weitere Analysen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="analysen.html">Analysen</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>

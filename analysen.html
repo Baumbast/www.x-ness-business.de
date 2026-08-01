@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysen | X-ness® Business</title>
+<meta name="description" content="Analysen zu Verwaltung, Struktur und Aushandlungslast — geschrieben aus der Vollzugsperspektive, nicht aus der Beraterperspektive.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/analysen.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.x-ness-business.de/analysen.html">
+<meta property="og:title" content="Analysen | X-ness® Business">
+<meta property="og:description" content="Texte über Verfahren, Struktur und die Frage, welche Reibung eine Organisation braucht.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:  #111111;
+  --white:  #FFFFFF;
+  --gold:   #B89A55;
+  --stone:  #D7D2C8;
+  --taupe:     #7A6C5C;
+  --petrol: #3B6D73;
+  --gray:   #F5F4F2;
+  --serif:  'Non-Elbow-Sans', Georgia, serif;
+  --sans:   'Sen', system-ui, sans-serif;
+  --sp-xl:  96px;
+  --sp-lg:  64px;
+  --sp-md:  32px;
+  --sp-sm:  16px;
+  --max:    1280px;
+  --read:   720px;
+  --pad:    clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); font-size: 20px; color: var(--black);
+  background: var(--white); line-height: 1.5;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--black); }
+p { line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone); padding: 0 var(--pad);
+}
+.nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 16px; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.hier { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+
+.btn-primary {
+  display: inline-block; background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  border: none; cursor: pointer; transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+
+.an-hero { padding: calc(68px + var(--sp-lg)) var(--pad) var(--sp-lg); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.an-hero-inner { max-width: var(--read); margin: 0 auto; }
+.an-hero h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.15; max-width: 16ch; }
+.an-hero p { font-size: clamp(18px, 2vw, 21px); line-height: 1.65; margin-top: var(--sp-md); max-width: 60ch; }
+
+.an-liste { max-width: var(--max); margin: 0 auto; padding: var(--sp-xl) var(--pad); }
+.an-karte {
+  display: block; text-decoration: none; color: inherit;
+  border: 1.5px solid var(--stone); border-radius: 14px;
+  padding: 44px 40px; background: var(--white);
+  transition: box-shadow .2s, border-color .2s;
+  max-width: 900px;
+}
+.an-karte:hover { box-shadow: 0 8px 24px rgba(17,17,17,.12); border-color: var(--taupe); }
+.an-karte + .an-karte { margin-top: 24px; }
+.an-tag { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.an-karte h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.25; margin-bottom: var(--sp-sm); max-width: 26ch; }
+.an-karte h2 em { font-style: normal; color: var(--petrol); }
+.an-teaser { font-size: 17px; line-height: 1.7; color: var(--taupe); max-width: 64ch; margin-bottom: var(--sp-md); }
+.an-fuss { display: flex; gap: 20px; align-items: baseline; flex-wrap: wrap; padding-top: var(--sp-sm); border-top: 1.5px solid var(--stone); }
+.an-datum { font-size: 14px; color: var(--taupe); }
+.an-weiter { font-size: 16px; color: var(--black); }
+
+.an-hinweis { max-width: 900px; margin-top: var(--sp-lg); padding-top: var(--sp-md); border-top: 1.5px solid var(--stone); }
+.an-hinweis p { font-size: 16px; line-height: 1.7; max-width: 62ch; margin: 0; }
+
+.an-cta { background: var(--gray); border-top: 1.5px solid var(--stone); padding: var(--sp-xl) var(--pad); }
+.an-cta-inner { max-width: var(--read); margin: 0 auto; }
+.an-cta h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--sp-md); max-width: 22ch; }
+.an-cta p { font-size: 18px; line-height: 1.7; }
+
+footer { background: var(--black); padding: var(--sp-lg) var(--pad); color: rgba(255,255,255,.4); font-size: 14px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die fünf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="analysen.html" class="hier">Analysen</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespräch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="an-hero">
+  <div class="an-hero-inner">
+    <div class="eyebrow">Texte</div>
+    <h1>Analysen</h1>
+    <p>
+      Texte über Verfahren, Struktur und die Frage, welche Reibung eine Organisation
+      braucht. Geschrieben aus der Vollzugsperspektive — von jemandem, der die
+      beschriebenen Vorgänge selbst bearbeitet hat.
+    </p>
+  </div>
+</header>
+
+<main class="an-liste">
+
+  <a class="an-karte" href="analyse_meritorik.html">
+    <div class="an-tag">Meritorik</div>
+    <h2>Wer die Bürokratie erzeugt — und wer sie <em>bezahlt</em></h2>
+    <p class="an-teaser">
+      Warum ein Malerauftrag über fünfundvierzigtausend Euro europaweit ausgeschrieben wird,
+      warum jede einzelne Regel dahinter begründet ist — und warum die Ebene, die den
+      geringsten Teil dieser Last erzeugt, den größten Teil davon trägt.
+    </p>
+    <div class="an-fuss">
+      <span class="an-datum">August 2026 · 10 Minuten</span>
+      <span class="an-weiter">Lesen &rarr;</span>
+    </div>
+  </a>
+
+  <a class="an-karte" href="analyse_silos.html">
+    <div class="an-tag">Struktur</div>
+    <h2>Das Silo ist keine Haltung — es ist eine <em>Zuständigkeitsordnung</em></h2>
+    <p class="an-teaser">
+      Über Silodenken wird geschrieben, als sei es ein Charakterfehler von Abteilungen. Ein
+      bekannter Fall aus Baden-Württemberg zeigt das Gegenteil: sieben beteiligte Häuser,
+      jedes im Recht, und ein Vorhaben, das trotzdem jahrelang stillstand.
+    </p>
+    <div class="an-fuss">
+      <span class="an-datum">August 2026 · 9 Minuten</span>
+      <span class="an-weiter">Lesen &rarr;</span>
+    </div>
+  </a>
+
+  <a class="an-karte" href="analyse_bundeserprobungsgesetz.html">
+    <div class="an-tag">Verwaltung</div>
+    <h2>Was das Bundeserprobungsgesetz kann — und was es <em>voraussetzt</em></h2>
+    <p class="an-teaser">
+      Kommunen dürfen künftig von Verfahrensvorschriften des Bundes abweichen, um zu
+      erproben, ob es einfacher geht. Der Antrag verlangt allerdings eine Aussage darüber,
+      wie der Schutzzweck der Norm anders erreicht wird — und das ist der Punkt, an dem die
+      meisten Vorhaben liegenbleiben.
+    </p>
+    <div class="an-fuss">
+      <span class="an-datum">August 2026 · 8 Minuten</span>
+      <span class="an-weiter">Lesen &rarr;</span>
+    </div>
+  </a>
+
+  <div class="an-hinweis">
+    <p>
+      Weitere Texte erscheinen unregelmäßig — dann, wenn ein Vorgang, eine Regelung oder
+      eine Debatte es wert ist, genauer angesehen zu werden.
+    </p>
+  </div>
+
+</main>
+
+<section class="an-cta">
+  <div class="an-cta-inner">
+    <div class="eyebrow">Der nächste Schritt</div>
+    <h2>Ein Gespräch, kein Angebot</h2>
+    <p>
+      Wenn eine dieser Fragen gerade in Ihrem Haus liegt, sprechen wir eine halbe Stunde
+      darüber. Danach wissen wir beide, ob eine Zusammenarbeit sinnvoll ist — und wenn
+      nicht, sage ich es Ihnen.
+    </p>
+    <a href="index.html#gespraech" class="btn-primary">Gespräch vereinbaren</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="analysen.html">Analysen</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>

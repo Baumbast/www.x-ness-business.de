@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Was das Bundeserprobungsgesetz kann — und was es voraussetzt | X-ness® Business</title>
+<meta name="description" content="Das Bundeserprobungsgesetz erlaubt Kommunen, von Verfahrensvorschriften des Bundes abzuweichen. Eine Analyse dessen, was das Gesetz leistet, was es ausschließt und welche Fähigkeit es stillschweigend voraussetzt.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/analyse_bundeserprobungsgesetz.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.x-ness-business.de/analyse_bundeserprobungsgesetz.html">
+<meta property="og:title" content="Was das Bundeserprobungsgesetz kann — und was es voraussetzt">
+<meta property="og:description" content="Das Gesetz schafft Spielraum. Die Fähigkeit, ihn zu ergreifen, kann es nicht mitliefern.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:  #111111;
+  --white:  #FFFFFF;
+  --gold:   #B89A55;
+  --stone:  #D7D2C8;
+  --taupe:     #7A6C5C;
+  --petrol: #3B6D73;
+  --gray:   #F5F4F2;
+  --serif:  'Non-Elbow-Sans', Georgia, serif;
+  --sans:   'Sen', system-ui, sans-serif;
+  --sp-xl:  96px;
+  --sp-lg:  64px;
+  --sp-md:  32px;
+  --sp-sm:  16px;
+  --max:    1280px;
+  --read:   720px;
+  --pad:    clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); font-size: 20px; color: var(--black);
+  background: var(--white); line-height: 1.5;
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--black); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 400; color: var(--black); }
+
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone); padding: 0 var(--pad);
+}
+.nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; letter-spacing: .01em; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 16px; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.hier { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+
+.btn-primary {
+  display: inline-block; background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none;
+  border: none; cursor: pointer; transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-line {
+  display: inline-block; font-family: var(--sans); font-size: 16px; font-weight: 700;
+  color: var(--black); text-decoration: none; padding: 14px 32px;
+  border: 1.5px solid var(--stone); border-radius: 10px; background: transparent; transition: border-color .2s;
+}
+.btn-line:hover { border-color: var(--black); }
+
+/* ARTIKEL-KOPF */
+.a-hero { padding: calc(68px + var(--sp-lg)) var(--pad) var(--sp-lg); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.a-hero-inner { max-width: var(--read); margin: 0 auto; }
+.a-hero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.2; max-width: 22ch; }
+.a-hero h1 em { font-style: normal; color: var(--petrol); }
+.a-lead { font-size: clamp(18px, 2vw, 21px); color: var(--taupe); line-height: 1.65; margin-top: var(--sp-md); max-width: 62ch; }
+.a-meta { margin-top: var(--sp-md); padding-top: var(--sp-sm); border-top: 1.5px solid var(--stone); font-size: 14px; color: var(--taupe); }
+
+/* ARTIKEL-KÖRPER */
+.a-body { max-width: var(--read); margin: 0 auto; padding: var(--sp-xl) var(--pad); }
+.a-body h2 {
+  font-size: clamp(26px, 3.2vw, 34px); line-height: 1.25;
+  margin-top: var(--sp-xl); margin-bottom: var(--sp-md); max-width: 24ch;
+}
+.a-body h2:first-child { margin-top: 0; }
+.a-body p { font-size: 19px; line-height: 1.75; color: var(--black); margin-bottom: var(--sp-md); }
+.a-body p.quiet { color: var(--taupe); }
+.a-punkt {
+  font-family: var(--serif); font-size: clamp(22px, 2.8vw, 30px); line-height: 1.4;
+  border-left: 2px solid var(--petrol); padding-left: 24px; margin: var(--sp-lg) 0;
+  color: var(--black);
+}
+.a-boxen { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: var(--sp-lg) 0; }
+.a-box { border: 1.5px solid var(--stone); border-radius: 14px; padding: 32px 28px; background: var(--white); }
+.a-box.aus { background: transparent; }
+.a-box-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.a-box ul { list-style: none; }
+.a-box li {
+  font-size: 16px; color: var(--taupe); line-height: 1.55;
+  padding: 10px 0 10px 20px; position: relative; border-bottom: 1px solid var(--stone);
+}
+.a-box li:last-child { border-bottom: none; }
+.a-box li::before { content: ''; position: absolute; left: 0; top: 20px; width: 8px; height: 1.5px; background: var(--gold); }
+@media (max-width: 720px) { .a-boxen { grid-template-columns: 1fr; } }
+
+.a-fragen { border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 40px 36px; background: var(--gray); margin: var(--sp-lg) 0; }
+.a-fragen h3 { font-size: 24px; margin-bottom: var(--sp-md); }
+.a-frage { padding: 20px 0; border-top: 1.5px solid var(--stone); display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+.a-frage:first-of-type { border-top: none; padding-top: 0; }
+.a-frage-num { font-family: var(--serif); font-size: 28px; color: var(--stone); line-height: 1.1; }
+.a-frage p { font-size: 17px; line-height: 1.65; color: var(--black); margin: 0; }
+.a-frage p span { display: block; margin-top: 8px; font-size: 15px; color: var(--taupe); }
+
+.a-quellen { margin-top: var(--sp-xl); padding-top: var(--sp-md); border-top: 1.5px solid var(--stone); }
+.a-quellen p { font-size: 15px; line-height: 1.7; color: var(--taupe); margin-bottom: var(--sp-sm); }
+.a-quellen a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--stone); }
+.a-quellen a:hover { border-color: var(--black); }
+
+/* ABSCHLUSS */
+.a-schluss { background: var(--gray); border-top: 1.5px solid var(--stone); padding: var(--sp-xl) var(--pad); }
+.a-schluss-inner { max-width: var(--read); margin: 0 auto; }
+.a-schluss h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--sp-md); max-width: 22ch; }
+.a-schluss p { font-size: 18px; line-height: 1.7; }
+.a-schluss-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: var(--sp-lg); }
+
+/* FOOTER */
+footer { background: var(--black); padding: var(--sp-lg) var(--pad); color: rgba(255,255,255,.4); font-size: 14px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die fünf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="analysen.html" class="hier">Analysen</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespräch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="a-hero">
+  <div class="a-hero-inner">
+    <div class="eyebrow">Analyse · Verwaltung</div>
+    <h1>Was das Bundeserprobungsgesetz kann — und was es <em>voraussetzt</em></h1>
+    <p class="a-lead">
+      Kommunen dürfen künftig von Verfahrensvorschriften des Bundes abweichen, um zu
+      erproben, ob es einfacher geht. Das ist ein echter Zugewinn. Wer den Gesetzestext
+      allerdings neben die eigene Verwaltungswirklichkeit legt, erkennt schnell: Die
+      schwierigste Arbeit beginnt dort, wo das Gesetz aufhört.
+    </p>
+    <p class="a-meta">Stand: August 2026 · Lesezeit etwa acht Minuten</p>
+  </div>
+</header>
+
+<article class="a-body">
+
+  <p>
+    Der Deutsche Bundestag hat das Bundeserprobungsgesetz Anfang Juli 2026 beschlossen.
+    Es ist aus dem früheren Reallabore-Gesetz hervorgegangen und im parlamentarischen
+    Verfahren deutlich erweitert worden — unter anderem um jenen Teil, der für Kommunen
+    der interessanteste ist: die allgemeine Erprobungsklausel in den §§ 3 bis 5. Weil die
+    Änderungen das Gesetz zustimmungsbedürftig gemacht haben, lohnt vor jeder Planung ein
+    Blick auf den aktuellen Verkündungsstand.
+  </p>
+  <p>
+    Der Grundgedanke ist gut und er ist überfällig. Bisher blieb es in den Ämtern
+    regelmäßig bei der Erkenntnis, dass man es eigentlich anders machen müsste. Künftig
+    soll diese Erkenntnis rechtssicher vor Ort erprobt werden können — und wenn sie sich
+    bewährt, in die Fläche gehen. Der Staat soll nicht nur regulieren, sondern lernen.
+  </p>
+  <p class="quiet">
+    Über diesen Grundgedanken ist inzwischen viel geschrieben worden. Weniger geschrieben
+    wurde darüber, was das Gesetz von einer Verwaltung verlangt, die es tatsächlich nutzen
+    will. Darum geht es hier.
+  </p>
+
+  <h2>Was das Gesetz erlaubt — und was nicht</h2>
+
+  <p>
+    Die allgemeine Erprobungsklausel ist enger gefasst, als die Überschriften vermuten
+    lassen. Abgewichen werden darf von verwaltungsrechtlichen Regelungen des Bundes zu
+    Verfahren, Form und Zuständigkeiten sowie zur personellen und sachlichen Ausstattung
+    von Behörden. Vom materiellen Recht darf nicht abgewichen werden — das steht
+    ausdrücklich im Gesetz. Erprobt wird also, wie etwas abläuft, nicht was gilt.
+  </p>
+
+  <div class="a-boxen">
+    <div class="a-box">
+      <div class="a-box-label">Erprobung möglich</div>
+      <ul>
+        <li>Verfahrensschritte bündeln oder umstellen</li>
+        <li>Schriftformerfordernisse durch digitale Formen ersetzen</li>
+        <li>Zuständigkeiten anders zuschneiden</li>
+        <li>Auf gesetzlich vorgesehene Beauftragte oder Ausstattung verzichten</li>
+        <li>Neue Formen der Beteiligung ausprobieren</li>
+      </ul>
+    </div>
+    <div class="a-box aus">
+      <div class="a-box-label">Ausgeschlossen</div>
+      <ul>
+        <li>Jede Abweichung von materiellem Recht</li>
+        <li>Bereiche mit eigener Experimentierklausel im Fachrecht</li>
+        <li>Steuer- und Abgabepflichten, Meldepflichten zur Sozialversicherung</li>
+        <li>Alles, was den Schutzzweck der Norm gefährdet</li>
+        <li>Alles, was höherrangigem Recht widerspricht</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    Die Genehmigung ist auf höchstens vier Jahre zu befristen, eine einmalige Verlängerung
+    um weitere vier Jahre ist möglich. Vor Beginn muss die Erprobung veröffentlicht werden.
+    Nach ihrem Abschluss prüft das zuständige Bundesministerium innerhalb von zwölf Monaten
+    unter Beteiligung des Antragstellers und des Nationalen Normenkontrollrats, ob das
+    Bundesrecht dauerhaft angepasst wird. Das ist der Kern des regulatorischen Lernens, und
+    er ist sauber konstruiert.
+  </p>
+
+  <h2>Die stille Voraussetzung</h2>
+
+  <p>
+    Nun zu der Stelle, an der es ernst wird. Der Antrag muss drei Dinge darlegen: von
+    welchen Regelungen abgewichen werden soll, wie lange erprobt werden soll — und auf
+    welche Weise der Schutzzweck der Regelung und ihre übergeordneten Ziele auch anders
+    erreicht werden können.
+  </p>
+  <p>
+    Der dritte Punkt ist keine juristische Formalie. Er verlangt, dass eine Behörde ihr
+    eigenes Verfahren von außen betrachten kann. Sie muss unterscheiden können, was an
+    diesem Verfahren der Sache dient und was nur der Gewohnheit. Sie muss benennen, welchen
+    Schutz eine Formvorschrift eigentlich herstellen sollte. Und sie muss eine begründete
+    Vermutung formulieren, wie sich dieser Schutz auf anderem Weg herstellen ließe.
+  </p>
+
+  <p class="a-punkt">
+    Der Antrag verlangt eine Aussage darüber, wie der Schutzzweck anders erreicht wird.
+    Das ist der Punkt, an dem die meisten Vorhaben liegenbleiben.
+  </p>
+
+  <p>
+    Das Gesetz setzt diese Fähigkeit voraus, statt sie zu erzeugen. Es gibt Freiraum, aber
+    keine Anleitung, ihn auszufüllen. Wer die vergangenen Jahre in einer Behörde verbracht
+    hat, weiß auch warum: Die Frage nach dem Zweck einer Vorschrift wird im Alltag fast nie
+    gestellt. Man vollzieht sie. Sie zu befragen, ist eine ungewohnte Bewegung — und sie
+    ist unbequem, weil sie Antworten hervorbringen kann, die niemand hören will.
+  </p>
+
+  <h2>Der Weg zum Antrag ist selbst eine Aushandlung</h2>
+
+  <p>
+    Eine Kommune stellt ihren Antrag nicht dort, wo die Entscheidung fällt. Sie richtet ihn
+    an die nach Landesrecht zuständige oberste Landesbehörde. Diese entscheidet im eigenen
+    Ermessen — und nur im Einvernehmen mit dem für die Regelung zuständigen
+    Bundesministerium, unter nachrichtlicher Beteiligung des Bundesministeriums für
+    Digitales und Staatsmodernisierung. Sind mehrere Ressorts betroffen, muss das
+    Einvernehmen mit allen hergestellt werden. Ob das Land den Antrag überhaupt
+    weiterleitet, liegt ebenfalls in seinem Ermessen. Eine Entscheidungsfrist sieht das
+    Gesetz für diesen Weg nicht vor, und einen Anspruch auf Genehmigung gibt es nicht.
+  </p>
+  <p>
+    Das ist kein Vorwurf an den Gesetzgeber; im föderalen Vollzug von Bundesrecht ist die
+    Konstruktion schwer zu vermeiden. Es ist eine Planungstatsache. Der Gesetzgeber selbst
+    rechnet in der Kostenschätzung mit rund 150 Anträgen im Jahr — bundesweit, für alle
+    Bundes-, Landes- und Kommunalbehörden zusammen. Er veranschlagt dafür etwa 975.000 Euro
+    jährlichen Erfüllungsaufwand.
+  </p>
+  <p class="quiet">
+    Man kann diese Zahl für zu vorsichtig halten. Man kann sie auch als das lesen, was sie
+    vermutlich ist: eine realistische Einschätzung dessen, wie viele Häuser die Kraft
+    aufbringen werden, diesen Weg zu gehen. Ein Gesetz gegen zu viel Verfahren, dessen
+    Zugang ein mehrstufiges Einvernehmensverfahren ist, wird von genau den Verwaltungen
+    genutzt werden, die ohnehin schon handlungsfähig sind.
+  </p>
+
+  <h2>Was das Gesetz nicht messen kann</h2>
+
+  <p>
+    Erprobt werden darf, was ein Verfahren zeitlich optimiert, aufwandsärmer oder digitaler
+    macht. Das sind die drei Achsen, und sie sind vernünftig gewählt. Aber es sind nur
+    drei, und keine von ihnen beantwortet die Frage, die vorher zu klären wäre: welche
+    Reibung in einem Verfahren verschwinden soll und welche nicht.
+  </p>
+  <p>
+    Denn nicht jede Reibung ist Verlust. Die Anhörung eines Betroffenen kostet Zeit und
+    verhindert Fehlentscheidungen. Das Vier-Augen-Prinzip kostet Zeit und schützt vor
+    Einseitigkeit. Eine Beteiligungsschleife kostet Zeit und erzeugt Akzeptanz, die später
+    Widerspruchsverfahren erspart. Diese Reibung formt das Ergebnis; sie gehört zum
+    Verfahren, sie ist nicht sein Fehler.
+  </p>
+  <p>
+    Daneben steht die andere Sorte: dieselbe Zuständigkeitsfrage, die in drei Ämtern
+    nacheinander geprüft wird. Der Vorgang, der zweimal in Papier überführt wird, weil eine
+    Schnittstelle fehlt. Die Grundsatzdebatte, die in jeder Sitzung von vorn beginnt, weil
+    nirgends hinterlegt ist, was beim letzten Mal galt. Diese Reibung formt nichts. Sie
+    blockiert.
+  </p>
+
+  <p class="a-punkt">
+    Nicht jede Reibung ist Reibungsverlust.<br>
+    Manche Reibung ist das Verfahren.
+  </p>
+
+  <p>
+    Wer beide Sorten nicht unterscheidet, optimiert im Zweifel die falsche weg — mit den
+    besten Absichten und mit Rückendeckung durch ein Bundesgesetz. Das Ergebnis ist ein
+    Verfahren, das schneller, billiger und digitaler ist und den Zweck verfehlt, um
+    dessentwillen es überhaupt existiert. Die Erprobung würde das nach vier Jahren
+    vermutlich zeigen. Nur ist der Schaden dann bereits eingetreten, und die Bereitschaft,
+    es noch einmal zu versuchen, ist verbraucht.
+  </p>
+
+  <h2>Das Gesetz nennt das eigentliche Hindernis selbst</h2>
+
+  <p>
+    In der Begründung findet sich eine bemerkenswerte Passage. Der Gesetzgeber zählt die
+    praktischen Hürden auf, an denen Erprobungen bisher scheitern, und die letzte lautet
+    sinngemäß: Es gebe in den Genehmigungsbehörden wenig Erfahrung mit Erprobungen, die
+    Praxis sei heterogen und teils von Risikoscheu und Informationsdefiziten geprägt.
+  </p>
+  <p>
+    Das ist eine kulturelle Diagnose. Sie beschreibt keinen Rechtsmangel, sondern einen
+    Zustand: Menschen, die es sich nicht leisten können, einen Fehler zu machen, und die
+    deshalb lieber nichts entscheiden. Verordnet wird dagegen ein Antragsverfahren.
+  </p>
+  <p>
+    In diesem Spalt zwischen Diagnose und Therapie liegt die eigentliche Arbeit. Ein
+    Rechtsrahmen kann Erlaubnis schaffen. Er kann nicht die Sicherheit schaffen, sie zu
+    nutzen. Ob ein Amtsleiter einen Antrag stellt, entscheidet sich nicht am Gesetzestext,
+    sondern daran, ob er damit rechnen muss, im Fall des Scheiterns allein dazustehen.
+  </p>
+
+  <h2>Drei Fragen vor dem Antrag</h2>
+
+  <p>
+    Wer in seinem Haus überlegt, die Erprobungsklausel zu nutzen, kommt an drei Fragen
+    nicht vorbei. Sie sind nicht juristischer Natur, und sie lassen sich nicht am
+    Schreibtisch der Rechtsabteilung beantworten.
+  </p>
+
+  <div class="a-fragen">
+    <h3>Vor dem Formular</h3>
+    <div class="a-frage">
+      <div class="a-frage-num">1</div>
+      <p>
+        Welche Reibung in diesem Verfahren dient der Sache — und welche nur der Gewohnheit?
+        <span>Diese Unterscheidung ist die Grundlage von allem Weiteren. Sie zu treffen
+        verlangt mehr als Verfahrenskenntnis; sie verlangt Abstand vom eigenen Ablauf.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">2</div>
+      <p>
+        Wenn wir die Form ändern — wodurch entsteht der Schutz, den sie herstellen sollte,
+        dann stattdessen?
+        <span>Das ist die Kernfrage des Antrags. Wer sie nicht beantworten kann, hat kein
+        Antragsproblem, sondern ein Diagnoseproblem.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">3</div>
+      <p>
+        Wer in unserem Haus muss den Versuch mittragen, damit er vier Jahre übersteht?
+        <span>Eine Erprobung, die nur von einer Person gewollt wird, endet mit deren
+        Versetzung. Das Vorhaben braucht mehr Rückhalt, als eine Antragsschrift abbilden
+        kann — im Amt, im Personalrat, im Gremium.</span>
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Das Bundeserprobungsgesetz ist der richtige Schritt in die richtige Richtung. Es hebt
+    eine Sperre auf, die lange als selbstverständlich galt. Was es nicht leisten kann, ist
+    die Vorarbeit: zu erkennen, was in einem Haus wirklich blockiert, und den Unterschied
+    zwischen der Reibung zu benennen, die es braucht, und der, die es aufreibt.
+  </p>
+  <p class="quiet">
+    Diese Vorarbeit ist keine Rechtsfrage. Sie ist eine Frage der Struktur.
+  </p>
+
+  <div class="a-quellen">
+    <p>
+      <strong>Grundlage dieser Analyse:</strong> der Gesetzentwurf auf Bundestagsdrucksache
+      21/218 in der Fassung der vom Kabinett am 6. Mai 2026 beschlossenen Formulierungshilfe
+      sowie die zugehörige Begründung. Die Zitate sind sinngemäß wiedergegeben; maßgeblich
+      ist der amtliche Text.
+    </p>
+    <p>
+      <a href="https://www.bundestag.de/dokumente" target="_blank" rel="noopener">Dokumente des Deutschen Bundestages</a>
+      &nbsp;·&nbsp;
+      <a href="https://bmds.bund.de/service/gesetzgebungsverfahren/bundeserprobungsgesetz" target="_blank" rel="noopener">Verfahrensstand beim BMDS</a>
+    </p>
+  </div>
+
+</article>
+
+<section class="a-schluss">
+  <div class="a-schluss-inner">
+    <div class="eyebrow">Wenn Sie vor dieser Frage stehen</div>
+    <h2>Die Unterscheidung lässt sich lernen</h2>
+    <p>
+      Welche Reibung ein Haus braucht und welche es aufreibt, ist genau die Frage, die im
+      Workshop bearbeitet wird — anhand der fünf institutionellen Profile und an Ihren
+      eigenen Verfahren, nicht an Beispielen aus der Literatur. Ob das für Sie passt,
+      klären wir vorher in einem halbstündigen Gespräch.
+    </p>
+    <div class="a-schluss-row">
+      <a href="index.html#gespraech" class="btn-primary">Gespräch vereinbaren</a>
+      <a href="analysen.html" class="btn-line">Weitere Analysen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="analysen.html">Analysen</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>
