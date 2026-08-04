@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Was Ihr Betrieb über sich selbst nicht weiß — und wie Sie es in zwei Stunden herausfinden | X-ness® Business</title>
+<meta name="description" content="Fünf Fragen an sieben Personen, die Ihren Betrieb kennen. Das Ergebnis ist kein Netzdiagramm, sondern die Stelle, an der Ihr Haus sich selbst nicht einig ist — und die Sie deshalb jede Woche Geld kostet.">
+<meta name="author" content="Wolfgang Baumbast">
+<link rel="canonical" href="https://www.x-ness-business.de/analyse_score.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.x-ness-business.de/analyse_score.html">
+<meta property="og:title" content="Was Ihr Betrieb über sich selbst nicht weiß">
+<meta property="og:description" content="Fünf Fragen, sieben Personen, zwei Stunden. Und dann reden Sie über das, worüber Sie sonst nicht reden.">
+<meta property="og:locale" content="de_DE">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root {
+  --black:  #111111;
+  --white:  #FFFFFF;
+  --gold:   #B89A55;
+  --stone:  #D7D2C8;
+  --taupe:  #7A6C5C;
+  --petrol: #3B6D73;
+  --gray:   #F5F4F2;
+  --serif:  'Non-Elbow-Sans', Georgia, serif;
+  --sans:   'Sen', system-ui, sans-serif;
+  --sp-xl:  96px;
+  --sp-lg:  64px;
+  --sp-md:  32px;
+  --sp-sm:  16px;
+  --max:    1280px;
+  --read:   720px;
+  --pad:    clamp(24px, 7vw, 96px);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); font-size: 20px; color: var(--black); background: var(--white); line-height: 1.5; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--black); }
+p { font-weight: 400; line-height: 1.5; margin-bottom: var(--sp-md); color: var(--taupe); }
+p strong { font-weight: 400; color: var(--black); }
+
+.eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--taupe); margin-bottom: var(--sp-sm);
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--stone); padding: 0 var(--pad);
+}
+.nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: var(--serif); font-size: 22px; color: var(--black); text-decoration: none; }
+.nav-logo sup { font-size: 11px; color: var(--gold); vertical-align: super; }
+.nav-links { display: flex; gap: 26px; list-style: none; }
+.nav-links a { font-size: 16px; color: var(--taupe); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-links a.hier { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 8px 20px; border-radius: 10px; font-weight: 700 !important; }
+.nav-cta:hover { opacity: .85 !important; color: var(--white) !important; }
+@media (max-width: 680px) { .nav-links { display: none; } }
+
+.btn-primary {
+  display: inline-block; background: var(--black); color: var(--white);
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  padding: 14px 32px; border-radius: 10px; text-decoration: none; transition: opacity .2s;
+}
+.btn-primary:hover { opacity: .85; }
+.btn-line {
+  display: inline-block; font-family: var(--sans); font-size: 16px; font-weight: 700;
+  color: var(--black); text-decoration: none; padding: 14px 32px;
+  border: 1.5px solid var(--stone); border-radius: 10px; transition: border-color .2s;
+}
+.btn-line:hover { border-color: var(--black); }
+
+.a-hero { padding: calc(68px + var(--sp-lg)) var(--pad) var(--sp-lg); background: var(--gray); border-bottom: 1.5px solid var(--stone); }
+.a-hero-inner { max-width: var(--read); margin: 0 auto; }
+.a-hero h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.2; max-width: 22ch; }
+.a-hero h1 em { font-style: normal; color: var(--petrol); }
+.a-lead { font-size: clamp(18px, 2vw, 21px); color: var(--taupe); line-height: 1.65; margin-top: var(--sp-md); max-width: 62ch; }
+.a-meta { margin-top: var(--sp-md); padding-top: var(--sp-sm); border-top: 1.5px solid var(--stone); font-size: 14px; color: var(--taupe); }
+
+.a-body { max-width: var(--read); margin: 0 auto; padding: var(--sp-xl) var(--pad); }
+.a-body h2 { font-size: clamp(26px, 3.2vw, 34px); line-height: 1.25; margin-top: var(--sp-xl); margin-bottom: var(--sp-md); max-width: 24ch; }
+.a-body h2:first-child { margin-top: 0; }
+.a-body p { font-size: 19px; line-height: 1.75; color: var(--black); margin-bottom: var(--sp-md); }
+.a-body p.quiet { color: var(--taupe); }
+.a-punkt {
+  font-family: var(--serif); font-size: clamp(22px, 2.8vw, 30px); line-height: 1.4;
+  border-left: 2px solid var(--petrol); padding-left: 24px; margin: var(--sp-lg) 0; color: var(--black);
+}
+
+.a-dims { border: 1.5px solid var(--stone); border-radius: 14px; padding: 36px 32px; margin: var(--sp-lg) 0; background: var(--white); }
+.a-dims-label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--sp-md); }
+.a-dim { padding: 18px 0; border-top: 1px solid var(--stone); }
+.a-dim:first-of-type { border-top: none; padding-top: 0; }
+.a-dim-name { font-family: var(--serif); font-size: 21px; color: var(--black); margin-bottom: 6px; }
+.a-dim-frage { font-size: 17px; color: var(--black); line-height: 1.55; }
+.a-dim-zu { font-size: 15px; color: var(--taupe); line-height: 1.6; margin-top: 6px; }
+
+.a-tab { width: 100%; border-collapse: collapse; margin: var(--sp-lg) 0; font-size: 16px; }
+.a-tab th {
+  text-align: left; font-family: var(--sans); font-weight: 700; font-size: 12px;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--gold);
+  padding: 0 12px 12px 0; border-bottom: 1.5px solid var(--stone);
+}
+.a-tab td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--stone); color: var(--taupe); vertical-align: top; }
+.a-tab td.name { color: var(--black); white-space: nowrap; }
+.a-tab td.zahl { color: var(--black); text-align: center; width: 68px; }
+.a-tab tr.auf td { background: rgba(59,109,115,.06); }
+.a-tab tr.auf td.zahl:last-child { color: var(--petrol); font-weight: 700; }
+
+.a-fragen { border: 1.5px solid var(--stone); border-top: 2px solid var(--petrol); border-radius: 14px; padding: 40px 36px; background: var(--gray); margin: var(--sp-lg) 0; }
+.a-fragen h3 { font-size: 24px; margin-bottom: var(--sp-md); }
+.a-frage { padding: 20px 0; border-top: 1.5px solid var(--stone); display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+.a-frage:first-of-type { border-top: none; padding-top: 0; }
+.a-frage-num { font-family: var(--serif); font-size: 28px; color: var(--stone); line-height: 1.1; }
+.a-frage p { font-size: 17px; line-height: 1.65; color: var(--black); margin: 0; }
+.a-frage p span { display: block; margin-top: 8px; font-size: 15px; color: var(--taupe); }
+
+.a-quellen { margin-top: var(--sp-xl); padding-top: var(--sp-md); border-top: 1.5px solid var(--stone); }
+.a-quellen p { font-size: 15px; line-height: 1.7; color: var(--taupe); margin-bottom: var(--sp-sm); }
+.a-quellen a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--stone); }
+.a-quellen a:hover { border-color: var(--black); }
+
+.a-schluss { background: var(--gray); border-top: 1.5px solid var(--stone); padding: var(--sp-xl) var(--pad); }
+.a-schluss-inner { max-width: var(--read); margin: 0 auto; }
+.a-schluss h2 { font-size: clamp(26px, 3.2vw, 34px); margin-bottom: var(--sp-md); max-width: 22ch; }
+.a-schluss p { font-size: 18px; line-height: 1.7; }
+.a-schluss-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: var(--sp-lg); }
+
+footer { background: var(--black); padding: var(--sp-lg) var(--pad); color: rgba(255,255,255,.4); font-size: 14px; }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-logo sup { font-size: 10px; color: var(--gold); }
+.footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.8); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">X-ness<sup>&reg;</sup> <span style="font-size:14px;color:var(--taupe);">Business</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#last">Die Aushandlungslast</a></li>
+      <li><a href="index.html#profile">Die fünf Profile</a></li>
+      <li><a href="index.html#formate">Formate</a></li>
+      <li><a href="analysen.html" class="hier">Analysen</a></li>
+      <li><a href="index.html#gespraech" class="nav-cta">Gespräch &rarr;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="a-hero">
+  <div class="a-hero-inner">
+    <div class="eyebrow">Analyse · Instrument</div>
+    <h1>Was Ihr Betrieb über sich selbst <em>nicht weiß</em></h1>
+    <p class="a-lead">
+      Fragen Sie sieben Leute in Ihrem Haus, wie es um den Betrieb steht — und
+      schauen Sie sich nicht die Antworten an, sondern die Stellen, an denen sie
+      auseinandergehen. Dort liegt etwas.
+    </p>
+    <p class="a-meta">Stand: August 2026 · Lesezeit etwa zwölf Minuten</p>
+  </div>
+</header>
+
+<article class="a-body">
+
+  <p>
+    Wenn Sie ein Unternehmen führen, haben Sie wahrscheinlich schon einmal eine
+    Standortbestimmung miterlebt. Fragebogen, Auswertung, ein Berater, der ein
+    Netzdiagramm an die Wand wirft und die schwächste Achse markiert. Maßnahmenkatalog.
+    Sechs Monate später erinnert sich niemand mehr an die Zahlen. Nicht weil die Zahlen
+    falsch waren, sondern weil niemand wusste, was er damit anfangen soll.
+  </p>
+
+  <p>
+    Das hat einen Grund, und er liegt nicht in der Methode. Es liegt an der Frage.
+    Solche Raster fragen: Wie gut ist Ihr Betrieb? Das klingt vernünftig, aber es
+    führt nirgendwohin. Sie erfahren, dass Sie bei einem Aspekt eine Sechs haben.
+    Und dann?
+  </p>
+
+  <p class="quiet">
+    Es gibt eine andere Frage, die mehr bringt — und die lautet nicht „Wie gut
+    sind wir?", sondern „Wo sehen wir uns unterschiedlich?"
+  </p>
+
+  <h2>Fünf Fragen, die jeder versteht</h2>
+
+  <p>
+    Die Erhebung besteht aus fünf Fragen. Jede hat einen Kurznamen, aber der Name
+    ist weniger wichtig als die Frage selbst. Sie können jede davon jedem Meister
+    in der Werkstatt stellen und bekommen eine Antwort — denn es sind keine
+    Beraterfragen, sondern Fragen, die jeder stellt, der sein Haus kennt.
+  </p>
+
+  <p>
+    Jede der fünf Fragen klingt einfach. Aber um sie auf einer Skala von eins bis
+    zehn zu beantworten, muss man wissen, worauf man eigentlich schaut. Deshalb
+    gehört zu jeder Frage eine Handvoll Unterfragen, die den Blick lenken — nicht
+    als Fragebogen, den man abarbeitet, sondern als Gedächtnisstütze, die
+    verhindert, dass man nur an das Nächstliegende denkt.
+  </p>
+
+  <div class="a-dims">
+    <div class="a-dims-label">Fünf Fragen an Ihren Betrieb — und was dahintersteckt</div>
+
+    <div class="a-dim">
+      <div class="a-dim-name">Fitness</div>
+      <div class="a-dim-frage">Trägt unser Geschäftsmodell noch — auch in fünf Jahren?</div>
+      <div class="a-dim-zu">Was genau ist das Geschäftsmodell — Dienstleistung, Produktion,
+      eine Mischung? Auf welchem Markt bewegen Sie sich, und wie groß ist er noch?
+      Wo stehen Sie innerhalb der Branche — vorn, Mitte, Nachhut? Wer sind die
+      Wettbewerber, und kommen sie aus dem Inland oder aus dem Ausland? Werden Ihre
+      Produkte oder Leistungen in drei Jahren noch nachgefragt, oder zeichnet sich
+      ab, dass sich etwas verschiebt? Hängen Sie an einem einzigen Kunden, an einem
+      einzigen Produkt, an einer einzigen Technologie — und was passiert, wenn die
+      wegfällt?</div>
+    </div>
+
+    <div class="a-dim">
+      <div class="a-dim-name">Business</div>
+      <div class="a-dim-frage">Wie viel Spielraum haben wir für einen Fehler?</div>
+      <div class="a-dim-zu">Hier geht es um die Zahlen, die Ihr Steuerberater kennt —
+      und die man nicht durch Einschätzungen ersetzen sollte, weil es belastbare Werte
+      gibt. Wie steht es mit der Liquidität? Gibt es Rücklagen, und wie lange reichen
+      sie? Wie sehen die Aktiva aus, wie die Passiva? Wie alt ist die
+      Betriebsausstattung, wie renovierungsbedürftig sind die Gebäude? Welche
+      Ersatzbeschaffungen stehen an, und sind sie finanziert? Was ist an materiellen und
+      immateriellen Wirtschaftsgütern vorhanden — Maschinen, Grundstücke, aber auch
+      Patente, Lizenzen, Markenrechte? Die einzige Dimension, bei der Sie nicht raten
+      müssen.</div>
+    </div>
+
+    <div class="a-dim">
+      <div class="a-dim-name">Cleverness</div>
+      <div class="a-dim-frage">Wissen wir, was wir wissen — und lernen wir schnell genug dazu?</div>
+      <div class="a-dim-zu">Welches Fachwissen steckt in Ihrem Haus, und an wie vielen
+      Köpfen hängt es? Wo liegt das Insiderwissen — das, was nicht in Handbüchern
+      steht, sondern in der Erfahrung der Leute, die seit zwanzig Jahren dabei sind?
+      Wird es archiviert, weitergegeben, oder geht es mit jedem Rentner durch die Tür?
+      Gibt es Forschung und Entwicklung? Entstehen neue Produkte, neue Verfahren,
+      neues Design — oder leben Sie vom Bestand? Gibt es Patente oder Markenrechte,
+      und werden sie gepflegt? Können Sie Nachfolger einarbeiten, bevor der Vorgänger
+      geht — oder erst danach?</div>
+    </div>
+
+    <div class="a-dim">
+      <div class="a-dim-name">Jointliness</div>
+      <div class="a-dim-frage">Wie belastbar sind die Beziehungen — nach innen und nach außen?</div>
+      <div class="a-dim-zu">Wie gehen Sie mit Ihren Mitarbeitern um — und wie gehen die
+      miteinander um? Ellenbogenmentalität oder Zusammenhalt? Wie sieht es mit Kunden
+      und Lieferanten aus — sind das Geschäftspartner oder Gegner? Wie läuft es dort,
+      wo zwei Abteilungen aufeinandertreffen — an der Schnittstelle zwischen Vertrieb
+      und Fertigung, zwischen Einkauf und Technik, zwischen Innen- und Außendienst?
+      Und: Gibt es in Ihrem Haus Menschen, die andere besser machen, und solche, die
+      allen die Kraft rauben — und wissen Sie, wer welche sind?</div>
+    </div>
+
+    <div class="a-dim">
+      <div class="a-dim-name">Meaningfulness</div>
+      <div class="a-dim-frage">Würde jemand es merken, wenn es uns nicht mehr gäbe?</div>
+      <div class="a-dim-zu">Keine philosophische Frage, sondern eine ganz praktische.
+      Trägt Ihr Betrieb zum Gemeinwohl bei — zur Ausbildung, zur Versorgung, zum
+      wirtschaftlichen Leben der Region? Würde eine Lücke entstehen, die nicht sofort
+      von jemand anderem gefüllt wird? Und die Personalseite: Warum will jemand bei
+      Ihnen arbeiten — und können Sie es einem Bewerber in zwei Sätzen sagen? Wenn
+      Sie das nicht können, wird es der Bewerber auch nicht wissen.</div>
+    </div>
+  </div>
+
+  <p>
+    Das sind keine zwanzig Fragen, die man abarbeitet. Es sind Denkrichtungen.
+    Jeder Beteiligte liest sie durch, lässt sie wirken und gibt dann seine
+    Einschätzung ab — eine Zahl zwischen eins und zehn, für jede der fünf
+    Dimensionen. Zwanzig Minuten, mehr nicht. Der Wert entsteht nicht durch
+    Präzision in der Einzelantwort, sondern dadurch, dass verschiedene Menschen
+    denselben Betrieb durch verschiedene Brillen sehen — und die Unterschiede
+    sichtbar werden.
+  </p>
+
+  <h2>Was in einem Zulieferbetrieb dabei herauskam</h2>
+
+  <p>
+    Ein Beispiel. Ein Zulieferer im Sondermaschinenbau, 140 Beschäftigte, in zweiter
+    Generation im Familienbesitz, seit Jahren gute Zahlen. Sieben Personen schätzen
+    unabhängig voneinander jede der fünf Fragen auf einer Skala von eins bis zehn
+    ein — ohne Absprache, ohne zu wissen, was die anderen ankreuzen.
+    Geschäftsführung, kaufmännische Leitung, Vertrieb, Fertigungsleitung, zwei
+    Meister und ein Betriebsratsmitglied.
+  </p>
+
+  <p>
+    Das Ergebnis sieht auf den ersten Blick harmlos aus.
+  </p>
+
+  <table class="a-tab">
+    <thead>
+      <tr><th>Frage</th><th style="text-align:center;">Median</th><th style="text-align:center;">Spannweite</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="name">Fitness</td><td class="zahl">7</td><td class="zahl">2</td></tr>
+      <tr><td class="name">Business</td><td class="zahl">8</td><td class="zahl">1</td></tr>
+      <tr><td class="name">Cleverness</td><td class="zahl">6</td><td class="zahl">3</td></tr>
+      <tr class="auf"><td class="name">Jointliness</td><td class="zahl">6</td><td class="zahl">6</td></tr>
+      <tr class="auf"><td class="name">Meaningfulness</td><td class="zahl">8</td><td class="zahl">5</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    In einer klassischen Auswertung würde jetzt jemand sagen: Cleverness ist am
+    schwächsten, da müssen wir ran. Das wäre die falsche Stelle.
+  </p>
+
+  <p>
+    Schauen Sie sich stattdessen die rechte Spalte an. Bei der Jointliness liegt die
+    Spannweite bei sechs. Das heißt: Einer hat neun gegeben, ein anderer drei. Das
+    ist keine Meinungsverschiedenheit über denselben Sachverhalt. Das sind zwei
+    verschiedene Betriebe.
+  </p>
+
+  <p class="a-punkt">
+    Der Mittelwert verdeckt genau das,<br>
+    weswegen Sie die Erhebung gemacht haben.
+  </p>
+
+  <h2>Was dahintersteckte</h2>
+
+  <p>
+    Im Gespräch zeigte sich schnell, dass beide recht hatten — sie redeten nur
+    über verschiedene Dinge.
+  </p>
+
+  <p>
+    Die Geschäftsführung hatte an die Kundenbeziehungen gedacht. Zwei der wichtigsten
+    Kunden sind seit über zwanzig Jahren dabei, man kennt sich, man hilft sich aus,
+    da kann man auch mal abends anrufen. Neun Punkte. Völlig nachvollziehbar.
+  </p>
+
+  <p>
+    Die Fertigungsleitung hatte an die Schnittstelle zum Vertrieb gedacht. Dort
+    werden Zusagen gemacht, die in der Fertigung eingelöst werden müssen — ohne
+    dass vorher jemand gefragt hätte, ob das auch geht. Dieselbe Kundenbeziehung,
+    die von vorn als Vertrauen erscheint, erscheint von hinten als wöchentlicher
+    Konflikt. Jener Konflikt, den Vertrieb und Fertigung seit Jahren in der
+    <a href="analyse_montagsrunde.html" style="color:var(--black);">Montagsrunde</a>
+    austragen — weil nie jemand gesagt hat, was gilt, wenn Liefertreue und
+    Auslastung sich widersprechen.
+  </p>
+
+  <p>
+    Das ist der Moment, in dem die Erhebung ihren Zweck erfüllt hat. Nicht die Zahl
+    war das Ergebnis. Das Ergebnis war, dass zwei Bereiche über denselben Betrieb
+    so unterschiedlich denken, dass die Lücke einen Namen braucht. Und wer sich
+    anschaut, was diese wöchentliche Aushandlung eigentlich kostet — in
+    Führungszeit, in verschobenen Aufträgen, in Rüstvorgängen, die bei einer
+    klaren Regel nie stattgefunden hätten —, der rechnet plötzlich mit anderen
+    Zahlen als denen im Netzdiagramm.
+  </p>
+
+  <p class="quiet">
+    Die fünf Fragen sind die Karte. Die
+    <a href="analyse_aushandlungslast.html" style="color:var(--taupe);">Aushandlungslast</a>
+    ist der Zähler. Getrennt bringt beides wenig. Zusammen wird aus einer
+    Wahrnehmung eine Zahl — und aus der Zahl ein Anlass, etwas zu entscheiden.
+  </p>
+
+  <h2>Die zweite Überraschung</h2>
+
+  <p>
+    Die andere auffällige Zeile war die Meaningfulness: Median acht, Spannweite
+    fünf. Für die Geschäftsführung war selbstverständlich, wofür der Betrieb steht —
+    die Frage stellte sich ihr gar nicht. Für zwei der jüngeren Beteiligten war sie
+    offen.
+  </p>
+
+  <p>
+    Das sah zunächst nach einer Generationenfrage aus und entpuppte sich als
+    Personalthema: Wer nicht sagen kann, wofür ein Haus steht, kann es Bewerbern
+    auch nicht sagen. In einem Markt, in dem jeder zweite Zulieferer Leute sucht,
+    ist das keine philosophische Frage, sondern eine mit Vakanztagen.
+  </p>
+
+  <h2>Drei Dinge, die der Score nicht ist</h2>
+
+  <p>
+    Falls Sie jetzt überlegen, ob das für Ihren Betrieb taugt, gehören drei
+    Einschränkungen dazu. Am besten vor der ersten Erhebung, nicht danach.
+  </p>
+
+  <p>
+    <strong>Er ist keine Messung.</strong> Was erhoben wird, sind Einschätzungen
+    von Menschen, die Ihren Betrieb kennen. Das ist keine Schwäche — es ist der
+    Punkt. Denn Ihr Betrieb wird gesteuert von dem, was Ihre Leute wahrnehmen,
+    nicht von objektiven Größen. Einzige Ausnahme: die Frage nach dem finanziellen
+    Spielraum. Da gibt es belastbare Zahlen, und die ersetzen die Einschätzung.
+  </p>
+
+  <p>
+    <strong>Er ist nicht vergleichbar.</strong> Es gibt keinen Branchenwert, kein
+    Ranking, keine Benchmark. Wenn Sie wissen wollen, ob eine Sechs bei der
+    Cleverness gut oder schlecht ist, stellen Sie die falsche Frage. Verglichen
+    wird Ihr Betrieb nur mit sich selbst — mit dem eigenen Anspruch und mit dem
+    eigenen Wert vom letzten Jahr. Alles andere wäre Scheingenauigkeit, die von
+    den Abweichungen ablenkt.
+  </p>
+
+  <p>
+    <strong>Er ersetzt kein Gespräch.</strong> Der Score sagt Ihnen, wo Sie
+    hinsehen sollten. Was dort zu tun ist, ergibt sich erst, wenn die Beteiligten
+    darüber reden, worauf sich ihre Einschätzungen bezogen haben. Ein Score ohne
+    dieses Gespräch ist genau der Ordner, von dem vorhin die Rede war.
+  </p>
+
+  <h2>Wie es praktisch läuft</h2>
+
+  <p>
+    Fünf bis acht Personen, verteilt über mindestens drei Ebenen und drei Bereiche.
+    Das ist wichtig: Wenn Sie nur Ihre Führungsrunde befragen, werden alle ungefähr
+    dasselbe sagen — und dann hat die Erhebung nichts ergeben, was Sie nicht schon
+    wussten.
+  </p>
+
+  <p>
+    Jede Person schätzt jede Frage unabhängig ein, allein, ohne Kenntnis der anderen
+    Werte. Zwanzig Minuten, mehr nicht. Erfasst werden nicht die Durchschnitte,
+    sondern die Spannweiten. Eine Spannweite von vier oder mehr gilt als Befund
+    und wird besprochen. In der Regel kommen zwei bis drei solcher Stellen heraus.
+    Mehr wären in einer Sitzung ohnehin nicht zu schaffen.
+  </p>
+
+  <p>
+    In der gemeinsamen Sitzung reden Sie dann nicht über die Zahlen, sondern über
+    die Frage: Woran hast du dabei gedacht? Fast immer stellt sich heraus, dass
+    beide Seiten recht haben und über verschiedene Dinge sprechen. Genau das ist
+    der Moment, in dem etwas passiert, das in der normalen Montagsrunde nie
+    passiert: Sie reden über das, worüber Sie sonst nicht reden.
+  </p>
+
+  <p class="quiet">
+    Wenn Sie das nach zwölf Monaten mit denselben Personen wiederholen, sehen
+    Sie, ob sich etwas bewegt hat. Ohne Wiederholung bleibt jede
+    Standortbestimmung eine Momentaufnahme, über die man später streiten kann.
+  </p>
+
+  <h2>Ob es sich lohnt</h2>
+
+  <div class="a-fragen">
+    <h3>Drei Fragen vorher</h3>
+    <div class="a-frage">
+      <div class="a-frage-num">1</div>
+      <p>
+        Gibt es bei Ihnen eine Frage, bei der Sie vermuten, dass die Werkstatt
+        sie anders beantwortet als Sie?
+        <span>Wenn Ihnen sofort eine einfällt, kennen Sie Ihre erste Abweichung
+        bereits.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">2</div>
+      <p>
+        Können Sie eine abweichende Einschätzung stehen lassen, ohne sie im
+        Gespräch einzuebnen?
+        <span>Das ist die eigentliche Voraussetzung. Wo die Führung korrigiert
+        statt zuzuhören, antworten beim nächsten Mal alle wie erwartet — und
+        die Erhebung war umsonst.</span>
+      </p>
+    </div>
+    <div class="a-frage">
+      <div class="a-frage-num">3</div>
+      <p>
+        Sind Sie bereit, aus dem Ergebnis eine Festlegung abzuleiten —
+        nicht nur eine Empfehlung?
+        <span>Eine Empfehlung ist nur eine weitere Aufgabe auf einer Liste.
+        Eine Festlegung ändert, wie morgen entschieden wird.</span>
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Die ganze Sache dauert zwei Stunden und besteht aus fünf groben Fragen.
+    Das ist weder teuer noch aufwendig. Was sie verlangt, ist etwas anderes:
+    die Bereitschaft, hinzuhören, wenn Ihnen jemand sagt, dass er Ihren
+    Betrieb anders sieht als Sie — und daraus nicht ein Personalgespräch
+    zu machen, sondern eine Frage an die eigene Struktur.
+  </p>
+
+  <p class="a-punkt">
+    An welcher Stelle sieht dieses Haus sich selbst nicht einig —<br>
+    und was kostet uns das jede Woche?
+  </p>
+
+  <p class="quiet">
+    Das ist die einzige Frage, die das Raster beantworten will.
+    Wenn die Antwort Sie überrascht, hat es sich gelohnt.
+  </p>
+
+  <div class="a-quellen">
+    <p>
+      Der geschilderte Betrieb ist aus mehreren Fällen verdichtet; Kennzahlen und
+      Einzelheiten wurden verändert.
+    </p>
+    <p>
+      Verwandte Analysen:
+      <a href="analyse_montagsrunde.html">Warum die Montagsrunde jede Woche von vorn beginnt</a> ·
+      <a href="analyse_aushandlungslast.html">Warum es immer dieselben trifft</a>
+    </p>
+  </div>
+
+</article>
+
+<section class="a-schluss">
+  <div class="a-schluss-inner">
+    <div class="eyebrow">Der Einstieg</div>
+    <h2>Zwei Stunden, sieben Personen, zwei Befunde</h2>
+    <p>
+      Die Erhebung steht am Anfang jeder Zusammenarbeit — auch weil sie Ihnen und
+      mir zeigt, ob es überhaupt etwas gibt, das eine weitergehende Arbeit lohnt.
+      Was danach geschieht, entscheiden Sie anhand dessen, was sichtbar geworden
+      ist. Ob das für Ihren Betrieb passt, klären wir vorher in einem
+      halbstündigen Gespräch.
+    </p>
+    <div class="a-schluss-row">
+      <a href="index.html#gespraech" class="btn-primary">Gespräch vereinbaren</a>
+      <a href="analysen.html" class="btn-line">Weitere Analysen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">X-ness<sup>&reg;</sup> Business</a>
+    <ul class="footer-links">
+      <li><a href="analysen.html">Analysen</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="https://www.x-ness.de" target="_blank" rel="noopener">x-ness.de</a></li>
+      <li><a href="https://www.baumbast.de" target="_blank" rel="noopener">baumbast.de</a></li>
+    </ul>
+    <p style="margin:0;color:rgba(255,255,255,.3);font-size:14px;">&copy; 2026 Wolfgang Baumbast &middot; X-ness&reg; &middot; DPMA Nr. 30 2024 245 473</p>
+  </div>
+</footer>
+
+</body>
+</html>
